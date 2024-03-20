@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>DreamMotion</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+	    tex2jax: {
+	        inlineMath: [['$','$'], ['\\(','\\)']],
+	        processEscapes: true
+	    }
+	});
+    </script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- <h1 class="xtitle is-1 publication-title" style="font-size: 31px;"><strong>VMC</strong></h1><br> -->
+            <h2 class="xtitle is-1 publication-title" style="font-size: 3rem;">
+              <font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font>: Space-Time Self-Similarity Score Distillation for Zero-Shot Video Editing
+            </h2><br>
+            <div class="is-size-5 publication-authors">
+            </div>
+            <!-- Institution & Conference -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block" style="font-size: 18px;"><a>Hyeonho Jeong,</a></span>
+              <span class="author-block" style="font-size: 18px;"><a>Jinho Chang,</a></span>
+              <span class="author-block" style="font-size: 18px;"><a>Geon Yeong Park,</a></span>
+              <span class="author-block" style="font-size: 18px;"><a href="https://bispl.weebly.com/professor.html" target="_blank">Jong Chul Ye</a></span>
+              <br>
+              <span class="eql-cntrb" style="font-size: 18px;">KAIST</span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2403.12002" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>ArXiv</span>
+                  </a>
+                </span>
+
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/2403.12002" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>PDF</span>
+                  </a>
+                </span> -->
+                
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                  <a href="static/pdfs/supplementary_material.pdf" target="_blank" class="external-link ">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span> -->
+
+                <!-- Github link -->
+                <!-- <span class="link-block">
+                  <a href="https://github.com/Ground-A-Video/Ground-A-Video" target="_blank" class="external-link ">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+
+                <!-- <span class="link-block">
+                  <a href="https://drive.google.com/drive/folders/1L4dIqeK52lGBuxIKAEUzZgOEP95dz7AC?usp=drive_link" target="_blank" class="external-link ">
+                    <span class="icon">
+                      <i class="fas fa-image"></i>
+                    </span>
+                    <span>Input Video (png)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://drive.google.com/drive/folders/1GUDnosOkYQ50-1bHHIBitRMeamkd2qao?usp=drive_link" target="_blank" class="external-link ">
+                    <span class="icon">
+                      <i class="fas fa-video"></i>
+                    </span>
+                    <span>Input Video (gif)</span>
+                  </a>
+                </span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section class="hero teaser">
+<div class="is-max-desktop">
+
+
+<div id="results" style='background-color: rgb(255, 255, 255);'>
+  <br>
+  <!-- <h2 class="tldr" style="font-size: 24px;">Teaser</h2> -->
+  <div>
+    <table style="width: 98%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/teaser/seagull_walking/input.gif" width="200">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input video
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/seagull_walking/crow.gif" width="200">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Crow
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/seagull_walking/pigeon.gif" width="200">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Pigeon
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/seagull_walking/chicken_ice.gif" width="200">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Chicken on the ice
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/seagull_walking/stork_snow.gif" width="200">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Stork on the snow
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/seagull_walking/duck_mud.gif" width="200">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Duck on the mud
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/seagull_walking/eagle_mud.gif" width="200">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Eagle on the mud
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/seagull_walking/owl_grass.gif" width="200">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Owl on the grass
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/seagull_walking/flamingo_grass.gif" width="200">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Flamingo on the grass
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+
+    <table style="width: 98%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/teaser/man_skate/input.gif" width="300">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input video
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/man_skate/astonaut.gif" width="300">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Astronaut
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/man_skate/firefighter.gif" width="300">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Firefighter
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/man_skate/oil.gif" width="300">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Oil painting
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/man_skate/pixel.gif" width="300">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Pixel art
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/teaser/man_skate/watercolor.gif" width="300">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Watercolor painting
+              </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+  </div>
+</div>
+
+
+<section class="section hero is-light" style='background-color: rgb(243, 242, 242);'>
+  <div class="container is-max-desktop" >
+    <div class="columns is-centered has-text-centered" >
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p style="font-size: 17px;">
+            Text-driven diffusion-based video editing presents a unique challenge not encountered in image editing literature: <i>establishing real-world motion.</i>
+            Unlike existing video editing approaches, here we focus on score distillation sampling to circumvent the standard reverse diffusion process 
+            and initiate optimization from videos that already exhibit natural motion.
+            Our analysis reveals that while video score distillation can effectively introduce new content indicated by target text, 
+            it can also cause significant structure and motion deviation.
+            To counteract this, we propose to match space-time self-similarities of the original video and the edited video during the score distillation.
+            Thanks to the use of score distillation, our approach is <i>model-agnostic</i>, which can be applied  for both cascaded and non-cascaded video diffusion frameworks.
+            Through extensive comparisons with leading methods, our approach demonstrates its superiority in altering appearances while accurately preserving the original structure and motion.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-justified">
+      <br><br>
+      <h2 class="title is-3">Overview</h2>
+      <img class="center-img center" src="static/images/overview.png" width="100%">
+      <br><br>
+      <h3 class="subtitle" style="font-size: 18px;">
+        <font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font> leverages gradients derived from score distillation to inject target appearance, 
+        which is complemented by self-similarity alignments across spatial and temporal dimensions.
+        This strategy seamlessly fits into cascaded video diffusion frameworks, confining the optimization on the keyframe generation phase.
+      </h3>
+
+      <br><br>
+      <!-- <h2 class="title is-3">Space-Time Self-Similarity</h2> -->
+      <img class="center-img center" src="static/images/ssm_overview.png" width="100%">
+      <br><br>
+      <h3 class="subtitle" style="font-size: 18px; text-align: center;">
+        <font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font> introduces Space-Time Self-Similarity regularization, 
+        which consists of <i>(a) Spatial Self-Similarity Matching</i> and <i>(b) Temporal Self-Similarity Matching</i>.
+        Note that the three losses $\mathcal{L}_\text{V-DDS}$, $\mathcal{L}_\text{S-SSM}$ and $\mathcal{L}_\text{T-SSM}$ 
+        share the same noise $\boldsymbol{\epsilon}$ and time $t$ for their computations, 
+        achieving a computationally efficient integration of optimizations through a single forward and reverse diffusion step.
+      </h3>
+    </div>
+  </div>
+</section>
+
+
+<div id="results" style='background-color: rgb(243, 242, 242)'>
+  <br>
+  <h2 class="tldr" style="font-size: 24px;"><font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font> with Zeroscope T2V</h2>
+  <!-- <h3 class="tldr" style="font-size: 20px;"> Low-resolution, Short Input Video &#10230; High-resolution, Long Output Video</h3> -->
+  <div>
+    <!-- <h2 class="tldr" style="font-size: 28px;">Motion of Sharks</h2> -->
+    <table style="width: 58%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/zeroscope/car/input.gif" width="220">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input video
+              </div>
+          </th>
+          <th>
+            &nbsp;&nbsp;&nbsp;
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/car/taxi_sunset.gif" width="220">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Taxi, <br> under sunset
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/car/schoolbus_aurora.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; School bus, <br> under aurora
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/car/truck_fireworks.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Truck, <br> under fireworks
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/car/vintage_dark.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Vintage car, <br> under dark clouds
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+    <table style="width: 58%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/zeroscope/car_turn/input.gif" width="220">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input video
+              </div>
+          </th>
+          <th>
+            &nbsp;&nbsp;&nbsp;
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/car_turn/convertible.gif" width="220">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Convertible
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/car_turn/police.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Police car
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/car_turn/porsche.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Porsche
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/car_turn/lamborghini_sunset.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Lamborghini, on sunset
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+    <table style="width: 58%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/zeroscope/dog_jump/input.gif" width="220">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input video
+              </div>
+          </th>
+          <th>
+            &nbsp;&nbsp;&nbsp;
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_jump/fox.gif" width="220">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Fox
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_jump/horse.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Horse
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_jump/tiger.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Tiger
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_jump/goat.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Goat
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+    <table style="width: 58%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/zeroscope/dog_walking/input.gif" width="220">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input video
+              </div>
+          </th>
+          <th>
+            &nbsp;&nbsp;&nbsp;
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_walking/corgi_child.gif" width="220">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+                Man &#129034; Child <br>
+                Dog &#129034; Corgi
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_walking/pig_child.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+              Man &#129034; Child <br>
+              Dog &#129034; Pig
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_walking/goat_woman.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+              Man &#129034; Woman <br>
+              Dog &#129034; Goat
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_walking/tiger_woman.gif" width="220">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+              Man &#129034; Woman <br>
+              Dog &#129034; Tiger
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+
+    <!-- <table style="width: 58%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/zeroscope/kickflip/input.gif" width="240">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input video
+              </div>
+          </th>
+          <th>
+            &nbsp;&nbsp;
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/kickflip/astronaut.gif" width="240">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Astronaut
+              </div>
+          </th>
+          <th>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_sitting/input.gif" width="240">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video
+            </div>
+          </th>
+          <th>
+            &nbsp;&nbsp;
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/dog_sitting/white_horse.gif" width="240">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; White horse
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br> -->
+    
+    <table style="width: 58%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+      <tbody>
+        <tr>
+          <th>
+            <img src="static/gifs/zeroscope/seagull_skyline/input.gif" width="175">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                Input video
+              </div>
+          </th>
+          <th>
+            &nbsp;&nbsp;&nbsp;
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/seagull_skyline/chicken.gif" width="175">
+
+              <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+                &#129034; Chicken
+              </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/seagull_skyline/duck.gif" width="175">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Duck
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/seagull_skyline/eagle.gif" width="175">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Eagle
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/seagull_skyline/flamingo.gif" width="175">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Flamingo
+            </div>
+          </th>
+          <th>
+            <img src="static/gifs/zeroscope/seagull_skyline/pigeon.gif" width="175">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Pigeon
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+  </div>
+</div>
+
+
+<div id="results" style='background-color: rgb(255, 255, 255)'>
+  <br>
+  <h2 class="tldr" style="font-size: 24px;"><font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font> with Show-1 Cascaded T2V</h2>
+
+  <table style="width: 50%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <img src="static/gifs/show1/plane_sky3/input.gif" width="300">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </th>
+        <th>
+          <img src="static/gifs/show1/plane_sky3/shark_water.gif" width="300">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Shark, under water
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/show1/plane_sky3/spaceship_space.gif" width="300">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+            &#129034; Spaceship, in space
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <table style="width: 50%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <img src="static/gifs/show1/plane_sky1/input.gif" width="300">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </th>
+        <th>
+          <img src="static/gifs/show1/plane_sky1/boat_sea.gif" width="300">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Boat, on the sea
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/show1/plane_sky1/military.gif" width="300">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+            &#129034; Military aircraft
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <table style="width: 50%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <img src="static/gifs/show1/cars_bridge2/input.gif" width="300">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </th>
+        <th>
+          <img src="static/gifs/show1/cars_bridge2/bus.gif" width="300">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Buses
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/show1/cars_bridge2/locomotive.gif" width="300">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+            &#129034; Locomotives
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table><br>
+
+  <table style="width: 58%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <img src="static/gifs/show1/swan/input.gif" width="270">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/show1/swan/pink.gif" width="270">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Pink swan
+            </div>
+        </th>
+        <th>
+          &nbsp;
+        </th>
+        <th>
+          <img src="static/gifs/show1/cars_bridge1/input.gif" width="270">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/show1/cars_bridge1/lamborghinis.gif" width="270">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              &#129034; Lamborghinis
+            </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+</div>
+
+<div id="results" style='background-color: rgb(243, 242, 242)'>
+  <br>
+  <h2 class="tldr" style="font-size: 24px;">Comparison to Baselines</h2>
+  <div style="text-align: center; font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size: 17px;">
+    <h3>A dog is jumping into a river. &#129034; A <u>horse</u> is jumping into a river.</h3>
+    <br>
+  </div>
+    <table style="width: 55%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <img src="static/gifs/zeroscope/dog_jump/input.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope/dog_jump/horse.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              <font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font> w/ Zeroscope <br> &nbsp;
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/dog_jump/tav.gif" width="240">
+
+          <div style="font-family: sans-serif; font-weight: bold;">
+            Tune-A-Video <br> &nbsp;
+          </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/dog_jump/cv.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              ControlVideo <br> &nbsp;
+            </div>
+        </th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/dog_jump/cav.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Control-A-Video
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/dog_jump/gen1.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Gen-1
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/dog_jump/tf.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              TokenFlow
+            </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <div style="text-align: center; font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size: 17px;">
+    <h3>A seagull is walking. &#129034; A <u>duck</u> is walking <u>on the mud</u>.</h3>
+    <br>
+  </div>
+    <table style="width: 55%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <img src="static/gifs/teaser/seagull_walking/input.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/teaser/seagull_walking/duck_mud.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              <font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font> w/ Zeroscope <br> &nbsp;
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/seagull_walking/tav.gif" width="240">
+
+          <div style="font-family: sans-serif; font-weight: bold;">
+            Tune-A-Video <br> &nbsp;
+          </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/seagull_walking/cv.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              ControlVideo <br> &nbsp;
+            </div>
+        </th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/seagull_walking/cav.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Control-A-Video
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/seagull_walking/gen1.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Gen-1
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/seagull_walking/tf.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              TokenFlow
+            </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <div style="text-align: center; font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size: 17px;">
+    <h3>A car is driving on the road. &#129034; A <u>lamborghini</u> is walking is driving on the road, <u>on sunset</u>.</h3>
+    <br>
+  </div>
+    <table style="width: 55%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <img src="static/gifs/zeroscope/car_turn/input.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope/car_turn/lamborghini_sunset.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              <font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font> w/ Zeroscope <br> &nbsp;
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/car_turn/tav.gif" width="240">
+
+          <div style="font-family: sans-serif; font-weight: bold;">
+            Tune-A-Video <br> &nbsp;
+          </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/car_turn/cv.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              ControlVideo <br> &nbsp;
+            </div>
+        </th>
+      </tr>
+      <tr>
+        <th></th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/car_turn/cav.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Control-A-Video
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/car_turn/gen1.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Gen-1
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/zeroscope_comparison/car_turn/tf.gif" width="240">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              TokenFlow
+            </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <div style="text-align: center; font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size: 17px;">
+    <h3>A man is skateboarding. &#129034; A <u>firefighter</u> is skateboarding.</h3>
+    <br>
+  </div>
+    <table style="width: 62%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <img src="static/gifs/teaser/man_skate/input.gif" width="285">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>&nbsp;</th>
+        <th>
+          <img src="static/gifs/teaser/man_skate/firefighter.gif" width="285">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              <font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font> w/ Show-1 <br> &nbsp;
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/show1_comparison/man_skate/firefighter/ddim.gif" width="285" >
+
+          <div style="font-family: sans-serif; font-weight: bold;">
+            DDIM inversion + Word swap <br> &nbsp;
+          </div>
+        </th>
+        <th>
+          <img src="static/gifs/show1_comparison/man_skate/firefighter/vmc.gif" width="285">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              VMC <br> &nbsp;
+            </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <div style="text-align: center; font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size: 17px;">
+    <h3>Cars are running on the bridge. &#129034; <u>Buses</u> are running on the bridge.</h3>
+    <br>
+  </div>
+    <table style="width: 62%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <img src="static/gifs/show1/cars_bridge2/input.gif" width="285">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>&nbsp;</th>
+        <th>
+          <img src="static/gifs/show1/cars_bridge2/bus.gif" width="285">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              <font color="MediumSeaGreen">Dream</font><font color="SeaGreen">Motion</font> w/ Show-1 <br> &nbsp;
+            </div>
+        </th>
+        <th>
+          <img src="static/gifs/show1_comparison/cars_bridge2/buses/ddim.gif" width="285" >
+
+          <div style="font-family: sans-serif; font-weight: bold;">
+            DDIM inversion + Word swap <br> &nbsp;
+          </div>
+        </th>
+        <th>
+          <img src="static/gifs/show1_comparison/cars_bridge2/buses/vmc.gif" width="285">
+
+            <div style="font-family: sans-serif; font-weight: bold;">
+              VMC <br> &nbsp;
+            </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br><br>
+</div>
+
+
+
+<!-- <div id="results" style='background-color: rgb(255, 255. 255)'>
+  <br>
+  <h2 class="tldr" style="font-size: 24px;">Ablation: <span class="tldr" style="font-size: 21px;">Roughly annotated masks effectively filter noisy gradients</span></h2>
+  <table style="width: 45%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <div>
+            &nbsp;
+          </div>
+          <img src="static/gifs/ablation/rabbit_watermelon/input_mask.gif" width="225">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video <br> with masks annotated
+            </div>
+        </th>
+        <th>
+          &nbsp;&nbsp;
+        </th>
+        <th>
+          <div style="font-family: sans-serif; font-weight: bold;">
+            With mask
+          </div>
+          <img src="static/gifs/ablation/rabbit_watermelon/with/german.gif" width="225">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; German shepherd
+          </div>
+        </th>
+        <th>
+          <div style="font-family: sans-serif; font-weight: bold;">
+            Without mask
+          </div>
+          <img src="static/gifs/ablation/rabbit_watermelon/without/german.gif" width="225">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; German shepherd
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table style="width: 45%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <div>
+            &nbsp;
+          </div>
+          <img src="static/gifs/ablation/lion_yawn/input_mask.gif" width="225">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video <br> with masks annotated
+            </div>
+        </th>
+        <th>
+          &nbsp;&nbsp;
+        </th>
+        <th>
+          <div style="font-family: sans-serif; font-weight: bold;">
+            With mask
+          </div>
+          <img src="static/gifs/ablation/lion_yawn/with/tiger.gif" width="225">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Tiger
+          </div>
+        </th>
+        <th>
+          <div style="font-family: sans-serif; font-weight: bold;">
+            Without mask
+          </div>
+          <img src="static/gifs/ablation/lion_yawn/without/tiger.gif" width="225">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Tiger
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+</div> -->
+
+<!-- <div id="results" style='background-color: rgb(255, 255, 255)'>
+  <br>
+  <h2 class="tldr" style="font-size: 24px;">Ablation: <span class="tldr" style="font-size: 21px;">Appearnce injection neccessitate space-time self-similarity</span></h2>
+  <table style="width: 45%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <div>
+            &nbsp; <br>  &nbsp;
+          </div>
+          <img src="static/gifs/zeroscope/dog_walking/input.gif" width="260">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </th>
+        <th>
+          <div style="font-family: sans-serif; font-weight: bold;">
+            Appearance Injection <br> with Structure Correction
+          </div>
+          <img src="static/gifs/zeroscope/dog_walking/spiderman.gif" width="260">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+              &#129034; Spider Man
+            </div>
+        </th>
+        <th>
+          <div style="font-family: sans-serif; font-weight: bold;">
+            Appearance Injection <br> without Structure Correction
+          </div>
+          <img src="static/gifs/ablation/dog_walking/without_st/spiderman.gif" width="260">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Spider Man
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <table style="width: 58%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <div>
+            &nbsp;
+          </div>
+          <img src="static/gifs/ablation/bird_forest/input.gif" width="260">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          &nbsp;&nbsp;&nbsp;
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}} + \mathcal{L}_{\text{S-SSM}} + \mathcal{L}_{\text{T-SSM}}$
+          </div>
+          <img src="static/gifs/ablation/bird_forest/vdds_s_t/flamingo.gif" width="260">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+              &#129034; Flamingo
+            </div>
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}} + \mathcal{L}_{\text{S-SSM}}$
+          </div>
+          <img src="static/gifs/ablation/bird_forest/vdds_s/flamingo.gif" width="260">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Flamingo
+          </div>
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}}$
+          </div>
+          <img src="static/gifs/ablation/bird_forest/vdds/flamingo.gif" width="260">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Flamingo<br>&nbsp;
+          </div>
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+        </th>
+        <th>
+          &nbsp;&nbsp;&nbsp;
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}} + \mathcal{L}_{\text{S-SSM}} + \mathcal{L}_{\text{T-SSM}}$
+          </div>
+          <img src="static/gifs/ablation/bird_forest/vdds_s_t/eagle.gif" width="260">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+              &#129034; Eagle
+            </div>
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}} + \mathcal{L}_{\text{S-SSM}}$
+          </div>
+          <img src="static/gifs/ablation/bird_forest/vdds_s/eagle.gif" width="260">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Eagle
+          </div>
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}}$
+          </div>
+          <img src="static/gifs/ablation/bird_forest/vdds/eagle.gif" width="260">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Eagle <br>&nbsp;
+          </div>
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+        </th>
+        <th>
+          &nbsp;&nbsp;&nbsp;
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}} + \mathcal{L}_{\text{S-SSM}} + \mathcal{L}_{\text{T-SSM}}$
+          </div>
+          <img src="static/gifs/ablation/bird_forest/vdds_s_t/chicken.gif" width="260">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+              &#129034; Chicken
+            </div>
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}} + \mathcal{L}_{\text{S-SSM}}$
+          </div>
+          <img src="static/gifs/ablation/bird_forest/vdds_s/chicken.gif" width="260">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Chicken
+          </div>
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}}$
+          </div>
+          <img src="static/gifs/ablation/bird_forest/vdds/chicken.gif" width="260">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Chicken
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <table style="width: 58%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <th>
+          <div>
+            &nbsp;
+          </div>
+          <img src="static/gifs/ablation/rabbit/input.gif" width="260">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold;">
+              Input video
+            </div>
+        </th>
+        <th>
+          &nbsp;&nbsp;&nbsp;
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}} + \mathcal{L}_{\text{S-SSM}} + \mathcal{L}_{\text{T-SSM}}$
+          </div>
+          <img src="static/gifs/ablation/rabbit/vdds_s_t/corgi.gif" width="260">
+
+            <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+              &#129034; Corgi
+            </div>
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}} + \mathcal{L}_{\text{S-SSM}}$
+          </div>
+          <img src="static/gifs/ablation/rabbit/vdds_s/corgi.gif" width="260">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Corgi
+          </div>
+        </th>
+        <th>
+          <div class="dnerf" style="font-size: 17px;">
+            $\mathcal{L}_{\text{V-DDS}}$
+          </div>
+          <img src="static/gifs/ablation/rabbit/vdds/corgi.gif" width="260">
+
+          <div style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">
+            &#129034; Corgi<br>&nbsp;
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+</div> -->
+
+<style>
+  .arrow-cell {
+    position: relative; /* Allows absolute positioning inside this cell */
+    text-align: left; /* Aligns the text to the left */
+    font-size: 16px; /* Adjusts font size as needed */
+    padding-left: 10px; /* Adds some space before the text */
+  }
+
+  .arrow-cell:after {
+    content: '';
+    display: block;
+    width: 80%; /* Reduces the arrow line length to shorten the arrow */
+    height: 2px; /* Thickness of the arrow line */
+    background-color: rgb(110, 107, 107); /* Arrow color */
+    position: absolute;
+    top: 50%; /* Centers the arrow vertically */
+    left: 10%; /* Starts the line a bit from the left */
+  }
+
+  .arrow-cell:before {
+    content: '>'; /* Uses a character for the arrowhead, adjust as needed */
+    font-size: 30px; /* Adjusts size of the arrowhead */
+    position: absolute;
+    top: 46%; /* Centers the arrowhead vertically */
+    transform: translateY(-50%);
+    right: 9%; /* Moves the arrowhead slightly to the left */
+  }
+</style>
+
+<div id="results" style='background-color: rgb(255, 255, 255)'>
+  <br>
+  <h2 class="tldr" style="font-size: 24px;"><span class="tldr" style="font-size: 21px;">Visualizing Optimization Progress</span></h2>
+  <table style="width: 50%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <td colspan="4" >Optimize: &nbsp; <span style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">Car &#129034; School bus, under aurora</span></td>
+      </tr>
+      <tr>
+        <td colspan="4" class="arrow-cell">&nbsp;</td>
+      </tr>
+      <tr>
+        <th>
+          <img src="static/gifs/progress_vis/car/input.gif" width="225">
+        </th>
+        <th>
+          <img src="static/gifs/progress_vis/car/40.gif" width="225">
+        </th>
+        <th>
+          <img src="static/gifs/progress_vis/car/130.gif" width="225">
+        </th>
+        <th>
+          <img src="static/gifs/progress_vis/car/schoolbus_aurora.gif" width="225">
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <table style="width: 50%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <td colspan="4" >Optimize: &nbsp; <span style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">Dog &#129034; Fox</span></td>
+      </tr>
+      <tr>
+        <td colspan="4" class="arrow-cell">&nbsp;</td>
+      </tr>
+      <tr>
+        <th>
+          <img src="static/gifs/progress_vis/dog_jump/input.gif" width="225">
+        </th>
+        <th>
+          <img src="static/gifs/progress_vis/dog_jump/10.gif" width="225">
+        </th>
+        <th>
+          <img src="static/gifs/progress_vis/dog_jump/30.gif" width="225">
+        </th>
+        <th>
+          <img src="static/gifs/progress_vis/dog_jump/fox.gif" width="225">
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <table style="width: 50%;margin-left:auto;margin-right:auto; text-align: center; border-spacing: 4px; border-collapse: separate; ">
+    <tbody>
+      <tr>
+        <td colspan="4" >Optimize: &nbsp; <span style="font-family: 'Segoe Print', sans-serif; font-weight: bold; font-size:14px;">Man &#129034; Astronaut</span></td>
+      </tr>
+      <tr>
+        <td colspan="4" class="arrow-cell">&nbsp;</td>
+      </tr>
+      <tr>
+        <th>
+          <img src="static/gifs/progress_vis/kickflip/input.gif" width="225">
+        </th>
+        <th>
+          <img src="static/gifs/progress_vis/kickflip/20.gif" width="225">
+        </th>
+        <th>
+          <img src="static/gifs/progress_vis/kickflip/40.gif" width="225">
+        </th>
+        <th>
+          <img src="static/gifs/progress_vis/kickflip/110.gif" width="225">
+        </th>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+</div>
+
+
+
+<br><hr>
+  <h2 class="tldr" style="font-size: 20px;">References</h2>
+  <div style="padding-left:340px;">
+  
+  <P style="text-align: left; font-family: sans-serif; font-weight: 500;">
+    &#x2022; Sterling, Spencer. <u>Zeroscope</u>. <a href="https://huggingface.co/cerspense/zeroscope_v2_576w"><i>https://huggingface.co/cerspense/zeroscope_v2_576w</i></a> (2023).
+  </P>
+
+  <P style="text-align: left; font-family: sans-serif; font-weight: 500;">
+    &#x2022; Zhang, David Junhao, et al. "<u>Show-1</u>: Marrying pixel and latent diffusion models for text-to-video generation." arXiv preprint arXiv:2309.15818 (2023).
+  </P>
+  
+  <P style="text-align: left; font-family: sans-serif; font-weight: 500;">
+    &#x2022; Wu, Jay Zhangjie, et al. "<u>Tune-a-video</u>: One-shot tuning of image diffusion models for text-to-video generation." Proceedings of the IEEE/CVF International Conference on Computer Vision (2023).
+  </P>
+
+  <P style="text-align: left; font-family: sans-serif; font-weight: 500;">
+    &#x2022; Zhang, Yabo, et al. "<u>Controlvideo</u>: Training-free controllable text-to-video generation." arXiv preprint arXiv:2305.13077 (2023).
+  </P>
+
+  <P style="text-align: left; font-family: sans-serif; font-weight: 500;">
+    &#x2022; Chen, Weifeng, et al. "<u>Control-a-video</u>: Controllable text-to-video generation with diffusion models." arXiv preprint arXiv:2305.13840 (2023).
+  </P>
+
+  <P style="text-align: left; font-family: sans-serif; font-weight: 500;">
+    &#x2022; Esser, Patrick, et al. "Structure and content-guided video synthesis with diffusion models." Proceedings of the IEEE/CVF International Conference on Computer Vision (2023).
+  </P>
+
+  <P style="text-align: left; font-family: sans-serif; font-weight: 500;">
+    &#x2022; Geyer, Michal, et al. "<u>Tokenflow</u>: Consistent diffusion features for consistent video editing." arXiv preprint arXiv:2307.10373 (2023).
+  </P>
+
+  <P style="text-align: left; font-family: sans-serif; font-weight: 500;">
+    &#x2022; Jeong, Hyeonho, et al. "<u>VMC</u>: Video Motion Customization using Temporal Attention Adaption for Text-to-Video Diffusion Models." arXiv preprint arXiv:2312.00845 (2023).
+  </P>
+
+  </div>
+  <br>
+
+
+<footer class="footer">
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+
+        <p>
+          This page was built using the <a href="https://github.com/vinthony/project-page-template">modification version</a> of 
+          <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> 
+          from <a href="https://github.com/vinthony">vinthony</a>, licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+
+  </html>
