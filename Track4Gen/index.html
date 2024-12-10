@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Track4Gen</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <style>
+    body {
+      padding: 2em;
+      font-family: sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2.5em 2.5em;
+      background-color: #333;
+      color: white;
+      border-radius: 1em;
+      margin-bottom: 2em;
+      font-family: sans-serif;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin: 0;
+      font-weight: bold;
+      
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 0.5em 0 0;
+    }
+
+    iframe {
+      border-radius: 0.5em;
+      width: 40em;
+      height: 40em;
+      border: none;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        width: 100%;
+        height: 30em;
+      }
+    }
+
+    a,
+    a:link {
+      color: #777;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #333;
+    }
+
+    /* Styles for the instruction icons and text */
+    .instructions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .instruction-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 1.5em;
+    }
+
+    .instruction-item img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .teaser {
+      text-align: center;
+      margin-bottom: 3em;
+      padding: 2em;
+      background-color: #ffffff;
+      border-radius: 1em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.1);
+    }
+
+    .teaser-title {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    .teaser-description {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+      max-width: 1150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .teaser-visuals {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+
+    .teaser-visual {
+      text-align: center;
+    }
+
+    .teaser-visual img {
+      width: 30em;
+      /* height: 17em; */
+      border-radius: 0.5em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    .teaser-visual p {
+      margin-top: 0.5em;
+      font-weight: bold;
+    }
+
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+    }
+
+    .author-block {
+      font-size: 20px;
+      color: white;color: white;
+      padding: 0 5px;
+      display: inline-block;
+    }
+
+    .eql-cntrb{
+      font-size: 19px;
+    }
+
+    sup{
+      font-size: small;
+    }
+  </style>
+  <title>Track4Gen</title>
+</head>
+
+<body>
+  <!-- Hero section with title and description -->
+  <div class="hero">
+    <h1>Track4Gen: Teaching Video Diffusion Models to Track Points <br>
+      Improves Video Generation</h1>
+
+    <br><br>
+    <div class="publication-authors">
+      <span class="author-block"><a href="https://hyeonho99.github.io/" target="_blank" style="color: inherit;">Hyeonho Jeong<small><sup>1,2</sup></small></a></span>&emsp;
+      <span class="author-block"><a href="https://paulchhuang.wixsite.com/chhuang" target="_blank" style="color: inherit;">Chun-Hao P. Huang<sup>1</sup></a></span>&emsp;
+      <span class="author-block"><a href="https://bispl.weebly.com/professor.html" target="_blank" style="color: inherit;">Jong Chul Ye<sup>2</sup></a></span>&emsp;
+      <span class="author-block"><a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/" target="_blank" style="color: inherit;">Niloy J. Mitra<small><sup>1,3</sup></small></a></span>&emsp;
+      <span class="author-block"><a href="https://www.duygu-ceylan.com/" target="_blank" style="color: inherit;">Duygu Ceylan<small><sup>1</sup></small></a></span>
+      <br><br>
+      <span class="eql-cntrb"><sup>1</sup>Adobe Research</span>
+      &emsp;&emsp;&emsp;
+      <span class="eql-cntrb"><sup>2</sup>KAIST</span>
+      &emsp;&emsp;&emsp;
+      <span class="eql-cntrb"><sup>3</sup>UCL</span>
+      &emsp;&emsp;&emsp;&emsp;
+    </div>
+  </div>
+
+
+  <p style="text-align: center; font-size: 1.2em; padding: 0em; font-weight: bold;">
+    Please click on other pages to see more results
+  </p>
+
+  <div style="text-align: center; font-size: 1.2em; font-weight: bold; color: #000000; ">
+    <!-- Navigation links -->
+    <strong>Page 1</strong>
+    &nbsp;&bull;&nbsp;
+    <a href="page2.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 2
+    </a>
+    &nbsp;&bull;&nbsp;
+    <a href="page3.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 3
+    </a>
+    &nbsp;&bull;&nbsp;
+    <a href="page4.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 4
+    </a>
+  </div>
+
+
+  <br><br>
+  <!-- Teaser results section -->
+  <div class="teaser">
+    <div class="teaser-title">Motivation</div>
+    <p class="teaser-description">
+      Current video generators often suffer from <b><i>appearance drift</i></b>, where visual elements gradually change, mutate, or degrade over time, causing inconsistencies in the objects.
+      Videos generated by <b>Track4Gen</b> are free from such appearance inconsistency issues.
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <img src="static/gifs/teaser/a-highland-cow-with-long-horns-standing-in-a-field/a highland cow with long horns standing in a field.jpg" alt="Input Image">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Pretrained Stable Video Diffusion</p>
+        <img src="static/gifs/teaser/a-highland-cow-with-long-horns-standing-in-a-field/original/a-highland-cow-with-long-horns-standing-in-a-field.gif" alt="Stable Video Diffusion">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Track4Gen</p>
+        <img src="static/gifs/teaser/a-highland-cow-with-long-horns-standing-in-a-field/ours/a-highland-cow-with-long-horns-standing-in-a-field.gif" alt="Track4Gen">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/full/a-person-riding-an-atv-on-a-dirt-track/input.jpg" alt="Input Image">
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/full/a-person-riding-an-atv-on-a-dirt-track/pretrained.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/full/a-person-riding-an-atv-on-a-dirt-track/ours.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+
+    <!-- <br>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/full/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/input.jpg" alt="Input Image">
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/full/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/pretrained.mp4" autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/full/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/ours.mp4" autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div> -->
+
+    <!-- <br> -->
+    <!-- <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/teaser/skater_0/input.jpg" alt="Input Image">
+        <p style="font-size: larger;">Input Image</p>
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/teaser/skater_0/original.gif" alt="Stable Video Diffusion">
+        <p style="font-size: larger;">Pretrained Stable Video Diffusion</p>
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/teaser/skater_0/ours.gif" alt="Track4Gen">
+        <p style="font-size: larger;">Track4Gen</p>
+      </div>
+    </div> -->
+  </div>
+  <br><br>
+
+  
+  <!-- Real video tracking -->
+  <div class="teaser">
+    <div class="teaser-title">Real-world Video Tracking</div>
+    <p class="teaser-description">
+      We track real-world videos using different video diffusion features.
+      Given color-coded query points on the first frame, tracked points on the whole video frames using features from different blocks are displayed.
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Upsampler of First Decoder Block</p>
+        <video src="static/gifs/real-video-tracking/goat/ups_0.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Upsampler of Second Decoder Block</p>
+        <video src="static/gifs/real-video-tracking/goat/ups_1.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Upsampler of Third Decoder Block</p>
+        <video src="static/gifs/real-video-tracking/goat/ups_2.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/real-video-tracking/swan/ups_0.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/real-video-tracking/swan/ups_1.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/real-video-tracking/swan/ups_2.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+    </div>
+  </div>
+  <br><br>
+
+  <!-- Real video tracking -->
+  <div class="teaser">
+    <div class="teaser-title">Generated Video Tracking</div>
+    <p class="teaser-description">
+      We analyze videos generated by video diffusion models and point tracks estimated based on the feature maps extracted during the denoising process.
+      And we observe that there is a correlation between <i><b>appearance drifts</b> (pixel-space inconsistencies)</i> and <i><b>tracking failures</b> (feature-space inconsistencies)</i>.
+    </p>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bald eagle flying over a tree filled forest.jpg">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Generated Video</p>
+        <p style="color: #CC0000 ;">Pixel-space Inconsistency</p>
+        <img src="static/gifs/generated-video-tracking/eagle/original/vid-gen/a-bald-eagle-flying-over-a-tree-filled-forest.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Estimated Point Tracks</p>
+        <p style="color: #CC0000 ;">Feature-space Inconsistency</p>
+        <video src="static/gifs/generated-video-tracking/eagle/original/vid-track/rainbow_interv_30_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bald eagle flying over a tree filled forest.jpg">
+      </div>
+      <div class="teaser-visual">
+        <p style="color: #097969;">Pixel-space Consistency</p>
+        <img src="static/gifs/generated-video-tracking/eagle/ours/vid-gen/a-bald-eagle-flying-over-a-tree-filled-forest.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="color: #097969;">Feature-space Consistency</p>
+        <video src="static/gifs/generated-video-tracking/eagle/ours/vid-track/rainbow_interv_30_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+    <br><hr><br>
+
+    <!-- <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a lioness yawning in a field.jpg">
+      </div>
+
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Generated Video</p>
+        <p style="color: #CC0000;">Pixel-space Inconsistency</p>
+        <img src="static/gifs/generated-video-tracking/lioness/original/vid-gen/generated.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Estimated Point Tracks</p>
+        <p style="color: #CC0000;">Feature-space Inconsistency</p>
+        <video src="static/gifs/generated-video-tracking/lioness/original/vid-track/rainbow_interv_40_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a lioness yawning in a field.jpg">
+      </div>
+
+      <div class="teaser-visual">
+        <p style="color: #097969;">Pixel-space Consistency</p>
+        <img src="static/gifs/generated-video-tracking/lioness/ours/vid-gen/generated.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="color: #097969;">Feature-space Consistency</p>
+        <video src="static/gifs/generated-video-tracking/lioness/ours/vid-track/rainbow_interv_40_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+
+    <br><hr><br> -->
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bunch of food is cooking on a grill over an open fire.jpg">
+      </div>
+
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Generated Video</p>
+        <p style="color: #CC0000;">Pixel-space Inconsistency</p>
+        <img src="static/gifs/generated-video-tracking/foods/original/a-bunch-of-food-is-cooking-on-a-grill-over-an-open-fire.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Estimated Point Tracks</p>
+        <p style="color: #CC0000;">Feature-space Inconsistency</p>
+        <video src="static/gifs/generated-video-tracking/foods/original/rainbow_interv_40_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bunch of food is cooking on a grill over an open fire.jpg">
+      </div>
+
+      <div class="teaser-visual">
+        <p style="color: #097969;">Pixel-space Consistency</p>
+        <img src="static/gifs/generated-video-tracking/foods/ours/a-bunch-of-food-is-cooking-on-a-grill-over-an-open-fire.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="color: #097969;">Feature-space Consistency</p>
+        <video src="static/gifs/generated-video-tracking/foods/ours/rainbow_interv_40_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+
+  </div>
+  <br>
+
+  <div class="teaser">
+    <div class="teaser-title">Overview</div>
+    <p class="teaser-description">
+      <span style="color: #CC0000;">Red</span>-colored blocks represent layers optimized by the <span style="color: #CC0000;">diffusion loss</span>,
+      while <span style="color: #097969;">green</span> blocks are optimized by the <span style="color: #097969;">correspondence loss</span>. 
+      Blocks colored both <span style="color: #CC0000;">red</span> and <span style="color: #097969;">green</span> are influenced by the joint <span style="color: #CC0000;">diffusion</span> and <span style="color: #097969;">correspondence</span> loss.
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img style="width: 1073px; height: 330px; border-radius: 0; box-shadow: 0 0 0 0;" src="static/gifs/overview.png">
+      </div>
+    
+    </div>
+    <br>
+  </div>
+  
+</body>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+  
+</body>
+
+</html>
