@@ -1,347 +1,466 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Hyeonho Jeong</title>
+<!doctype html>
+<html lang="en">
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.">
-    
-    <meta name="keywords" content="minimal light">
-    
-    
-    <link rel="canonical" href="https://minimal-light-theme.yliu.me/"/>
-    
+<head>
+  <title>Track4Gen</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <style>
+    body {
+      padding: 2em;
+      font-family: sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+    }
 
-    <!-- <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/favicon-dark.png" type="image/png" /> -->
-    <!-- <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" /> -->
-    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
+    .hero {
+      text-align: center;
+      padding: 2.5em 2.5em;
+      background-color: #333;
+      color: white;
+      border-radius: 1em;
+      margin-bottom: 2em;
+      font-family: sans-serif;
+    }
 
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin=anonymous>
+    .hero h1 {
+      font-size: 2.5em;
+      margin: 0;
+      font-weight: bold;
+      
+    }
 
-    
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/publications.css">
-    
+    .hero p {
+      font-size: 1.2em;
+      margin: 0.5em 0 0;
+    }
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        
-        
-        <a class="image avatar"><img src="./assets/img/profile1.jpg" alt="avatar" style="border-radius: 20%;"/></a>
+    iframe {
+      border-radius: 0.5em;
+      width: 40em;
+      height: 40em;
+      border: none;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
 
-        <h2>Hyeonho Jeong</h2>
+    @media (max-width: 768px) {
+      iframe {
+        width: 100%;
+        height: 30em;
+      }
+    }
 
-        
-        <position style="font-size:1.10rem;">Graduate Student @ KAIST</position>
-        <br>   
-        <!-- <position style="font-size:1.10rem;">Intern @ Adobe Research</position>
-        <br>      -->
+    a,
+    a:link {
+      color: #777;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #333;
+    }
+
+    /* Styles for the instruction icons and text */
+    .instructions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .instruction-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 1.5em;
+    }
+
+    .instruction-item img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .teaser {
+      text-align: center;
+      margin-bottom: 3em;
+      padding: 2em;
+      background-color: #ffffff;
+      border-radius: 1em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.1);
+    }
+
+    .teaser-title {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    .teaser-description {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+      max-width: 1150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .teaser-visuals {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+
+    .teaser-visual {
+      text-align: center;
+    }
+
+    .teaser-visual img {
+      width: 30em;
+      /* height: 17em; */
+      border-radius: 0.5em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+
+    .teaser-visual p {
+      margin-top: 0.5em;
+      font-weight: bold;
+    }
+
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+    }
+
+    .author-block {
+      font-size: 20px;
+      color: white;color: white;
+      padding: 0 5px;
+      display: inline-block;
+    }
+
+    .eql-cntrb{
+      font-size: 19px;
+    }
+
+    sup{
+      font-size: small;
+    }
+
+
+  </style>
+  <title>Track4Gen</title>
+</head>
+
+<body>
+  <!-- Hero section with title and description -->
+  <div class="hero">
+    <h1>Track4Gen: Teaching Video Diffusion Models to Track Points <br>
+      Improves Video Generation</h1>
+
+    <br><br>
+    <div class="publication-authors">
+      <span class="author-block"><a href="https://hyeonho99.github.io/" target="_blank" style="color: inherit;">Hyeonho Jeong<small><sup>1,2</sup></small></a></span>&emsp;
+      <span class="author-block"><a href="https://paulchhuang.wixsite.com/chhuang" target="_blank" style="color: inherit;">Chun-Hao P. Huang<sup>1</sup></a></span>&emsp;
+      <span class="author-block"><a href="https://bispl.weebly.com/professor.html" target="_blank" style="color: inherit;">Jong Chul Ye<sup>2</sup></a></span>&emsp;
+      <span class="author-block"><a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/" target="_blank" style="color: inherit;">Niloy J. Mitra<small><sup>1,3</sup></small></a></span>&emsp;
+      <span class="author-block"><a href="https://www.duygu-ceylan.com/" target="_blank" style="color: inherit;">Duygu Ceylan<small><sup>1</sup></small></a></span>
+      <br><br>
+      <span class="eql-cntrb"><sup>1</sup>Adobe Research</span>
+      &emsp;&emsp;&emsp;
+      <span class="eql-cntrb"><sup>2</sup>KAIST</span>
+      &emsp;&emsp;&emsp;
+      <span class="eql-cntrb"><sup>3</sup>UCL</span>
+      &emsp;&emsp;&emsp;&emsp;
+    </div>
+
+    <br>
+    <div class="publication-authors">
+      <a href="https://arxiv.org/abs/2412.06016" target="_blank" style="text-decoration: none;">
+        <button style="background-color: rgba(154, 156, 156, 0.2); color: white; border: 2px solid white; padding: 10px 20px; font-size: 18px; border-radius: 5px; cursor: pointer;">
+          Arxiv
+      </button>
+    </a>
+    </div>
+  </div>
+
+
+  <p style="text-align: center; font-size: 1.2em; padding: 0em; font-weight: bold;">
+    Please click on other pages to see more results
+  </p>
+
+  <div style="text-align: center; font-size: 1.2em; font-weight: bold; color: #000000; ">
+    <!-- Navigation links -->
+    <strong>Page 1</strong>
+    &nbsp;&bull;&nbsp;
+    <a href="page2.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 2
+    </a>
+    &nbsp;&bull;&nbsp;
+    <a href="page3.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 3
+    </a>
+    &nbsp;&bull;&nbsp;
+    <a href="page4.html" style="display: inline-block; padding: 0.4em 0.8em; background-color: #000000; color: #fff; text-decoration: none; border-radius: 0.3em; transition: background-color 0.3s;">
+      Page 4
+    </a>
+  </div>
+
+
+  <br><br>
+  <!-- Teaser results section -->
+  <div class="teaser">
+    <div class="teaser-title">Motivation</div>
+    <p class="teaser-description">
+      Current video generators often suffer from <b><i>appearance drift</i></b>, where visual elements gradually change, mutate, or degrade over time, causing inconsistencies in the objects.
+      Videos generated by <b>Track4Gen</b> are free from such appearance inconsistency issues.
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <img src="static/gifs/teaser/a-highland-cow-with-long-horns-standing-in-a-field/a highland cow with long horns standing in a field.jpg" alt="Input Image">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Pretrained Stable Video Diffusion</p>
+        <img src="static/gifs/teaser/a-highland-cow-with-long-horns-standing-in-a-field/original/a-highland-cow-with-long-horns-standing-in-a-field.gif" alt="Stable Video Diffusion">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Track4Gen</p>
+        <img src="static/gifs/teaser/a-highland-cow-with-long-horns-standing-in-a-field/ours/a-highland-cow-with-long-horns-standing-in-a-field.gif" alt="Track4Gen">
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/full/a-person-riding-an-atv-on-a-dirt-track/input.jpg" alt="Input Image">
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/full/a-person-riding-an-atv-on-a-dirt-track/pretrained.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/full/a-person-riding-an-atv-on-a-dirt-track/ours.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+
+    <!-- <br>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/full/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/input.jpg" alt="Input Image">
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/full/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/pretrained.mp4" autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/full/two-sheep-grazing-in-the-grass-next-to-a-wooden-bridge/ours.mp4" autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div> -->
+
+    <!-- <br> -->
+    <!-- <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img src="static/gifs/teaser/skater_0/input.jpg" alt="Input Image">
+        <p style="font-size: larger;">Input Image</p>
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/teaser/skater_0/original.gif" alt="Stable Video Diffusion">
+        <p style="font-size: larger;">Pretrained Stable Video Diffusion</p>
+      </div>
+      <div class="teaser-visual">
+        <img src="static/gifs/teaser/skater_0/ours.gif" alt="Track4Gen">
+        <p style="font-size: larger;">Track4Gen</p>
+      </div>
+    </div> -->
+  </div>
+  <br><br>
+
   
+  <!-- Real video tracking -->
+  <div class="teaser">
+    <div class="teaser-title">Real-world Video Tracking</div>
+    <p class="teaser-description">
+      We track real-world videos using different video diffusion features.
+      Given color-coded query points on the first frame, tracked points on the whole video frames using features from different blocks are displayed.
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Upsampler of First Decoder Block</p>
+        <video src="static/gifs/real-video-tracking/goat/ups_0.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
         
-        <email>hyeonho.jeong (at) kaist.ac.kr</email>
-        
-
-        <br>
-        <br>
-        <div class="social-icons">
-        
-        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=Pa7EfsEAAAAJ">
-          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
-        </a>  
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="./assets/files/resume.pdf">
-          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="https://github.com/hyeonho99">
-          <i class="fab fa-github"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/in/hyeonho-jeong-jhh/">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 0 0 0" href="https://twitter.com/Hyeonho_Jeong99">
-          <i class="fab fa-twitter"></i>
-        </a>
-        
-        </div>
-        <br>
-
-      </header>
-      <section>
-
-      <h2 id="about-me">About Me</h2>
-
-<p>
-  I am a graduate student at <a href="https://gsai.kaist.ac.kr/">KAIST AI</a>, advised by <a href="https://bispl.weebly.com/">Prof. Jong Chul Ye</a>. 
-  Before that, I received my B.S. degree in Computer Science at Sungkyunkwan University in Aug. 2023.
-</p>
-<p>
-  <!-- My research interests lies in <b>AIGC</b>, especially Video Generation/Editing.<br> -->
-   My research interests lies in <u>Controllable Video Generation and Editing</u>. 
-   I am also broadly interested in generative modeling across various modalities (image, video, 3D, 4D) using diffusion models.<br>
-  Refer to my <a href="./assets/files/resume.pdf">CV</a> for details.
-</p>
-
-<strong style="color:crimson; font-size: larger;">I will be joining Adobe Research London (full-time research engineer) this summer!</strong>
-
-<!-- <h2 id="research-interests">Research Interests</h2>
-
-<ul>
-  <li><strong>Computer Vision:</strong> image recognition, image generation, video captioning</li>
-  <li><strong>Machine Learning:</strong> meta-learning, incremental learning, transfer learning</li>
-</ul> -->
-
-<h2 id="news">News</h2>
-
-<ul>
-  <li><strong>[Feb. 2025]</strong> &nbsp; <a href="https://hyeonho99.github.io/track4gen/" target="_blank">Track4Gen</a> is accepted to <b>CVPR 2025</b>.</li>
-  <li><strong>[Dec. 2024]</strong> &nbsp; <a href="https://geonyeong-park.github.io/spectral-motion-alignment/" target="_blank">SMA</a> is accepted to <b>AAAI 2025</b>.</li>
-  <li><strong>[Nov. 2024]</strong> &nbsp; <a href="https://video-motion-customization.github.io/" target="_blank">VMC</a> was presented as an oral presentation at <b>KCCV 2024</b>, 
-    and won finalist award at <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2024-south-korea" target="_blank">Qualcomm Innovation Fellowship Award 2024</a>.</li>
-  <li><strong>[Jul. 2024]</strong> &nbsp; <a href="https://hyeonho99.github.io/dreammotion/" target="_blank">DreamMotion</a> is accepted to <b>ECCV 2024</b>.</li>
-  <li><strong>[Jul. 2024]</strong> &nbsp; I started a research internship with <a href="https://research.adobe.com/" target="_blank">Adobe</a>, 
-    <br> mentored by <a href="https://www.duygu-ceylan.com/" target="_blank">Duygu Ceylan,</a> <a href="https://paulchhuang.wixsite.com/chhuang" target="_blank">Chun-Hao Huang,</a>
-     and <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/" target="_blank">Niloy J. Mitra.</a></li>
-  <li><strong>[Feb. 2024]</strong> &nbsp; <a href="https://video-motion-customization.github.io/" target="_blank">VMC</a> is accepted to <b>CVPR 2024</b>.</li>
-  <li><strong>[Jan. 2024]</strong> &nbsp; <a href="https://ground-a-video.github.io/" target="_blank">Ground-A-Video</a> is accepted to <b>ICLR 2024</b>.</li>
-  <li><strong>[Aug. 2023]</strong> &nbsp; I Started M.S at <a href="https://gsai.kaist.ac.kr/" target="_blank">KAIST Gradudate School of AI</a>. (Advisor: Prof. Jong Chul Ye)</li>
-  <!-- <li>
-    <strong>[Jan. 2023]</strong> &nbsp; Joined <a href="https://bispl.weebly.com/">BISPL</a> as a research intern and wrote my first paper. <br>
-    - <a href="https://arxiv.org/abs/2302.03900" target="_blank">Zero-shot Generation of Coherent Storybook from Plain Text Story using Diffusion Models</a>
-  </li> -->
-</ul>
-
-<h2 id="publications" style="margin: 2px 0px -5px;">Publications</h2>
-
-<div class="publications">
-<ol class="bibliography">
-  <li>
-    <div class="pub-row">
-      <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-        <img src="./assets/img/JOG3R-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100; height=40%" />
-                <!-- <abbr class="badge">preprint</abbr> -->
       </div>
-      <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-          <div class="title">On Unifying Video Generation and Camera Pose Estimation</div>
-          <div class="author">Chun-Hao P. Huang, Jae Shin Yoon, <strong><font color="black">Hyeonho Jeong</font></strong>, Niloy J. Mitra, Duygu Ceylan
-          <div class="periodical"><em>ArXiv 2025</em>
-          </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2501.01409" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-          <a href="https://paulchhuang.github.io/jog3rwebsite/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-        </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Upsampler of Second Decoder Block</p>
+        <video src="static/gifs/real-video-tracking/goat/ups_1.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Upsampler of Third Decoder Block</p>
+        <video src="static/gifs/real-video-tracking/goat/ups_2.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
       </div>
     </div>
-  </li>  
-  <br><hr>
+    <br>
 
-  <li>
-    <div class="pub-row">
-      <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-        <img src="./assets/img/Track4Gen-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100; height=40%" />
-                <abbr class="badge">CVPR</abbr>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <video src="static/gifs/real-video-tracking/swan/ups_0.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
       </div>
-      <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-          <div class="title">Track4Gen: Teaching Video Diffusion Models to Track Points Improves Video Generation</div>
-          <div class="author"><strong><font color="black">Hyeonho Jeong</font></strong>, Chun-Hao P. Huang, Jong Chul Ye, Niloy J. Mitra, Duygu Ceylan
-          <div class="periodical"><em>IEEE / CVF Computer Vision and Pattern Recognition Conference <strong>(CVPR)</strong>, 2025</em>
-            </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2412.06016" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-          <a href="https://hyeonho99.github.io/track4gen/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-        </div>
+      <div class="teaser-visual">
+        <video src="static/gifs/real-video-tracking/swan/ups_1.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+        
       </div>
-    </div>
-  </li>  
-  <br><hr>
-
-  <li>
-    <div class="pub-row">
-      <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-        <img src="./assets/img/sma-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100; height=40%" />
-                <abbr class="badge">AAAI</abbr>
-      </div>
-      <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-          <div class="title">Spectral Motion Alignment for Video Motion Transfer using Diffusion Models</div>
-          <div class="author">Geon Yeong Park*, <strong><font color="black">Hyeonho Jeong*</font></strong>, Sang Wan Lee, Jong Chul Ye
-          <div class="periodical"><em>
-            The 39th Annual AAAI Conference on Artificial Intelligence <br> (<strong>AAAI</strong> 2025)</em>
-          </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2403.15249" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-          <a href="https://geonyeong-park.github.io/spectral-motion-alignment/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-          <a href="https://github.com/geonyeong-park/Spectral-Motion-Alignment" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-        </div>
-      </div>
-    </div>
-  </li>  
-  <br><hr>
-
-  <li>
-    <div class="pub-row">
-      <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-        <img src="./assets/img/dreammotion-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-                <abbr class="badge">ECCV</abbr>
-      </div>
-      <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-          <div class="title">DreamMotion: Space-Time Self-Similar Score Distillation for Zero-Shot Video Editing</div>
-          <div class="author"><strong><font color="black">Hyeonho Jeong</font></strong>, Jinho Chang, Geon Yeong Park, Jong Chul Ye
-          <div class="periodical"><em>The 18th European Conference on Computer Vision (ECCV), 2024</em>
-          </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2403.12002/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-          <a href="https://hyeonho99.github.io/dreammotion/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-        </div>
-      </div>
-    </div>
-  </li>
-  <br><hr>  
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-    <img src="./assets/img/vmc-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-            <abbr class="badge">CVPR</abbr>
-  </div>
-  <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-      <div class="title">VMC: Video Motion Customization using Temporal Attention Adaption for Text-to-Video Diffusion Models</div>
-      <div class="author"><strong><font color="black">Hyeonho Jeong*</font></strong>, Geon Yeong Park*, Jong Chul Ye
-      <div class="periodical"><em>IEEE / CVF Computer Vision and Pattern Recognition Conference <strong>(CVPR)</strong>, 2024</em>
-      </div>
-    <div class="links">
-      <a href="https://arxiv.org/abs/2312.00845" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-      <a href="https://video-motion-customization.github.io/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-      <a href="https://github.com/HyeonHo99/Video-Motion-Customization" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      <a href="https://drive.google.com/drive/u/2/folders/1L4dIqeK52lGBuxIKAEUzZgOEP95dz7AC?usp=drive_link" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Data</a>      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br><hr>
-
-
-<li>
-  <div class="pub-row">
-    <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-      <img src="./assets/img/gav-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-              <abbr class="badge">ICLR</abbr>
-    </div>
-    <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-        <div class="title">Ground-A-Video: Zero-shot Grounded Video Editing using Text-to-image Diffusion Models</div>
-        <div class="author"><strong><font color="black">Hyeonho Jeong</font></strong>, Jong Chul Ye
-        <div class="periodical"><em>International Conference on Learning Representations <strong>(ICLR)</strong>, 2024</em>
-        </div>
-      <div class="links">
-        <a href="https://arxiv.org/abs/2310.01107/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-        <a href="https://ground-a-video.github.io/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-        <a href="https://github.com/Ground-A-Video/Ground-A-Video" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-              
+      <div class="teaser-visual">
+        <video src="static/gifs/real-video-tracking/swan/ups_2.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
         
       </div>
     </div>
   </div>
-</li>
-<br><hr>
+  <br><br>
 
-<li>
-  <div class="pub-row">
-    <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-      <img src="./assets/img/lamp-teaser.png" class="teaser img-fluid z-depth-1" />
-              <abbr class="badge">ICASSP</abbr>
-    </div>
-    <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-        <div class="title">Neural Network Training Strategy to Enhance Anomaly Detection Performance</div>
-        <div class="author">YeongHyeon Park, Sungho Kang, Myung Jin Kim, <strong><font color="black">Hyeonho Jeong</font></strong>, Hyunkyu Park, Hyeong Seok Kim, Juneho Yi
-        <div class="periodical"><em>International Conference on Acoustics, Speech, & Signal Processing <strong>(ICASSP)</strong>, 2024</em>
-        </div>
-      <div class="links">
-        <a href="https://arxiv.org/abs/2308.14595/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
+  <!-- Real video tracking -->
+  <div class="teaser">
+    <div class="teaser-title">Generated Video Tracking</div>
+    <p class="teaser-description">
+      We analyze videos generated by video diffusion models and point tracks estimated based on the feature maps extracted during the denoising process.
+      And we observe that there is a correlation between <i><b>appearance drifts</b> (pixel-space inconsistencies)</i> and <i><b>tracking failures</b> (feature-space inconsistencies)</i>.
+    </p>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bald eagle flying over a tree filled forest.jpg">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Generated Video</p>
+        <p style="color: #CC0000 ;">Pixel-space Inconsistency</p>
+        <img src="static/gifs/generated-video-tracking/eagle/original/vid-gen/a-bald-eagle-flying-over-a-tree-filled-forest.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Estimated Point Tracks</p>
+        <p style="color: #CC0000 ;">Feature-space Inconsistency</p>
+        <video src="static/gifs/generated-video-tracking/eagle/original/vid-track/rainbow_interv_30_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
       </div>
     </div>
-  </div>
-</li>
-<br><hr>
+    <br>
 
-<li>
-  <div class="pub-row">
-    <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-      <img src="./assets/img/storybook-teaser.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-              <!-- <abbr class="badge">preprint</abbr> -->
-    </div>
-    <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-        <div class="title">Zero-shot Generation of Coherent Storybook from Plain Text Story using Diffusion Models</div>
-        <div class="author"><strong><font color="black">Hyeonho Jeong</font></strong>, Gihyun Kwon, Jong Chul Ye
-        <div class="periodical"><em>ArXiv 2023</em>
-        </div>
-      <div class="links">
-        <a href="https://arxiv.org/abs/2302.03900/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bald eagle flying over a tree filled forest.jpg">
+      </div>
+      <div class="teaser-visual">
+        <p style="color: #097969;">Pixel-space Consistency</p>
+        <img src="static/gifs/generated-video-tracking/eagle/ours/vid-gen/a-bald-eagle-flying-over-a-tree-filled-forest.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="color: #097969;">Feature-space Consistency</p>
+        <video src="static/gifs/generated-video-tracking/eagle/ours/vid-track/rainbow_interv_30_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
       </div>
     </div>
-  </div>
-</li>
-<br><hr>
+    <br><hr><br>
 
-<!-- <br /> -->
+    <!-- <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a lioness yawning in a field.jpg">
+      </div>
 
-</ol>
-</div>
-
-<h2 id="services">Teaching</h2>
-
-<ul style="margin:0 0 5px;">
-  <li>Teaching Assistant, Spring 2025, <i>Generative Models and Unsupervised Learning</i> (AI 618), KAIST</li>
-  <li>Teaching Assistant, Spring 2024, <i>Generative Models and Unsupervised Learning</i> (AI 618), KAIST</li>
-</ul>
-
-
-<!-- <h2 id="services">Services</h2>
-
-<h4 style="margin:0 10px 0;">Conference Reviewers</h4>
-
-<ul style="margin:0 0 5px;">
-  <li><a href="http://cvpr2023.thecvf.com/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2021-2023</autocolor></a></li>
-  <li><a href="http://iccv2021.thecvf.com/"><autocolor>IEEE/CVF International Conference on Computer Vision (ICCV) 2021</autocolor></a></li>
-  <li><a href="https://eccv2022.ecva.net/"><autocolor>European Conference on Computer Vision (ECCV) 2022</autocolor></a></li>
-</ul> -->
-
-      <br>
-
-      
-      <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</small></p>
-      
-
-      </section>
-      <footer>
-        
-      </footer>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Generated Video</p>
+        <p style="color: #CC0000;">Pixel-space Inconsistency</p>
+        <img src="static/gifs/generated-video-tracking/lioness/original/vid-gen/generated.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Estimated Point Tracks</p>
+        <p style="color: #CC0000;">Feature-space Inconsistency</p>
+        <video src="static/gifs/generated-video-tracking/lioness/original/vid-track/rainbow_interv_40_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
     </div>
-    <script src="/assets/js/scale.fix.js"></script>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a lioness yawning in a field.jpg">
+      </div>
+
+      <div class="teaser-visual">
+        <p style="color: #097969;">Pixel-space Consistency</p>
+        <img src="static/gifs/generated-video-tracking/lioness/ours/vid-gen/generated.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="color: #097969;">Feature-space Consistency</p>
+        <video src="static/gifs/generated-video-tracking/lioness/ours/vid-track/rainbow_interv_40_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+
+    <br><hr><br> -->
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Input Image</p>
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bunch of food is cooking on a grill over an open fire.jpg">
+      </div>
+
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Generated Video</p>
+        <p style="color: #CC0000;">Pixel-space Inconsistency</p>
+        <img src="static/gifs/generated-video-tracking/foods/original/a-bunch-of-food-is-cooking-on-a-grill-over-an-open-fire.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="font-size: larger;">Estimated Point Tracks</p>
+        <p style="color: #CC0000;">Feature-space Inconsistency</p>
+        <video src="static/gifs/generated-video-tracking/foods/original/rainbow_interv_40_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+    <br>
+
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <p> &nbsp;</p>
+        <img src="static/gifs/generated-video-tracking/a bunch of food is cooking on a grill over an open fire.jpg">
+      </div>
+
+      <div class="teaser-visual">
+        <p style="color: #097969;">Pixel-space Consistency</p>
+        <img src="static/gifs/generated-video-tracking/foods/ours/a-bunch-of-food-is-cooking-on-a-grill-over-an-open-fire.gif">
+      </div>
+      <div class="teaser-visual">
+        <p style="color: #097969;">Feature-space Consistency</p>
+        <video src="static/gifs/generated-video-tracking/foods/ours/rainbow_interv_40_erosion_25.mp4" muted autoplay loop style="width: 100%; max-width: 30em; border-radius: 0.5em; box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);"></video>
+      </div>
+    </div>
+
+  </div>
+  <br>
+
+  <div class="teaser">
+    <div class="teaser-title">Overview</div>
+    <p class="teaser-description">
+      <span style="color: #CC0000;">Red</span>-colored blocks represent layers optimized by the <span style="color: #CC0000;">diffusion loss</span>,
+      while <span style="color: #097969;">green</span> blocks are optimized by the <span style="color: #097969;">correspondence loss</span>. 
+      Blocks colored both <span style="color: #CC0000;">red</span> and <span style="color: #097969;">green</span> are influenced by the joint <span style="color: #CC0000;">diffusion</span> and <span style="color: #097969;">correspondence</span> loss.
+    </p>
+    <div class="teaser-visuals">
+      <div class="teaser-visual">
+        <img style="width: 1073px; height: 330px; border-radius: 0; box-shadow: 0 0 0 0;" src="static/gifs/overview.png">
+      </div>
     
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-111540567-4', 'auto');
-      ga('send', 'pageview');
-    </script>
-    
-  </body>
+    </div>
+    <br>
+  </div>
+  
+</body>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+  
+</body>
+
 </html>
