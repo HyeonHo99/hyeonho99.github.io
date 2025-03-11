@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reangle-A-Video</title>
+  <style>
+    /* Global styles for high readability and a clean look */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+    .container {
+      width: 90%;
+      max-width: 1500px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    }
+    .header {
+      padding: 0;
+      margin-bottom: 20px;
+      background: none;
+      box-shadow: none;
+      text-align: center;
+    }
+    h1, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 15px 0;
+    }
+    .authors {
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+    .section {
+      text-align: center;
+      margin-bottom: 3em;
+      padding: 0.5em;
+      background-color: #ffffff;
+      border-radius: 1em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.1);
+    }
+    .section-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0.4em;
+      margin-top: 2em;
+    }
+    .video-item p {
+      display: block;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5em;
+      box-shadow: 0 0 1em 0em rgba(0, 0, 0, 0.15);
+    }
+    .vid-des {
+      font-size: larger;
+    }
+    .highlight {
+    background-color: #333;
+    color: #fff;
+    padding: 0.2em 0.5em;
+    border-radius: 0.5em;
+  }
+  .video-label {
+    width: 200px;        /* Fixed width for all labels */
+    text-align: right;   /* Right-align the text */
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 1em;
+  }
+
+  mark {
+    background-color: #f0e68c; /* A softer, pale yellow */
+    color: #333; /* Dark gray for good contrast */
+    padding: 2px 5px; /* Add padding for breathing room */
+    border-radius: 3px; /* Slightly rounded corners */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 2px 5px; /* 2px top and bottom, 5px left and right */
+  }
+
+  .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+  }
+
+  .author-block {
+      font-size: 19px;
+      color: black;
+      padding: 0 5px;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .title-highlight {
+      background: linear-gradient(45deg, #1e90ff, #ff1493);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      /* Optional: add a subtle text shadow for extra depth */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header without extra padding or border -->
+    <div class="header">
+      <h1>
+        <span class="title-highlight">Reangle-A-Video</span>: 4D Video Generation as Video-to-Video Translation
+      </h1>
+      <br>
+
+      <div class="publication-authors">
+        <span class="author-block"><a href="https://hyeonho99.github.io/" target="_blank" style="color: inherit; text-decoration: none">Hyeonho Jeong<sup>*</sup></a></span>&emsp;
+        <span class="author-block"><a href="https://github.com/hyn2028" target="_blank" style="color: inherit; text-decoration: none">Suhyeon Lee<sup>*</sup></a></span>&emsp;
+        <span class="author-block"><a href="https://bispl.weebly.com/" target="_blank" style="color: inherit; text-decoration: none">Jong Chul Ye</a></span>&emsp;
+        <br>
+        <span class="author-block" style="padding-top: 5px;">&emsp;&emsp;&emsp;&emsp;KAIST AI</span>&emsp;&emsp;&emsp;&emsp;
+        <br>
+        <span><sup>*</sup> indicates equal contribution</span>
+      </div>
+  
+      <br>
+      <div class="publication-authors">
+        <a href="#" target="_blank" style="text-decoration: none;">
+          <button style="background-color: rgba(40, 41, 41, 0.65); color: white; border: 2px solid white; padding: 10px 20px; font-size: 18px; border-radius: 7px; cursor: pointer;">
+            Arxiv
+          </button>
+        </a>
+        &emsp;&emsp;&emsp;
+        <a href="https://github.com/HyeonHo99/Reangle-A-Video" target="_blank" style="text-decoration: none;">
+          <button style="background-color: rgba(40, 41, 41, 0.65); color: white; border: 2px solid white; padding: 10px 20px; font-size: 18px; border-radius: 7px; cursor: pointer;">
+            Code
+          </button>
+        </a>
+      </div>
+    </div>
+    
+    <p style="text-align: center; font-size: 20px; margin-bottom: 2em; color: #555;">
+      <em>Press Enter to pause or resume all videos.</em>
+    </p>
+
+    <!-- TL;DR section -->
+    <div class="section" id="tldr">
+      <div class="section-title">TL;DR</div>
+      <p style="width: 70%; text-align: center; font-size: 18px; margin: 0 auto;">
+        We introduce <span class="title-highlight">Reangle-A-Video</span>, a unified framework for generating synchronized multi-view videos from a single input video. <br>
+        We achieve <b>(a) <u>Static view transport</b></u> and <b>(b) <u>Dynamic camera control</u></b> without relying on any multi-view generative priors, where both approaches offer six degrees of freedom.
+      </p>
+      <br><br>
+
+      <p style="font-size: 20px; font-weight: bold;">
+        (a) <u>Static view transport</u>: Regeneration of the input video <i>shooting from target viewpoints</i>.
+      </p>
+      
+      <!-- Video grid for static view transport -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/input.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit right</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/horizontal-8.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/vertical+4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <!-- Second row -->
+        <div class="video-item">
+          <div class="vid-des">View from Orbit left</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/horizontal+6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Dolly zoom in</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/zoomin-22.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Dolly zoom out</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/zoomout+4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+      
+      <p style="font-size: 20px; font-weight: bold;">
+        (b) <u>Dynamic camera control</u>: Regeneration of the input video <i>following target camera movements</i>.
+      </p>
+      
+      <!-- Video grid for dynamic camera control -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/frog_0_48_1/input.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit up</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/frog_0_48_1/vertical-0.2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit down</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/frog_0_48_1/vertical+0.1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <!-- Second row -->
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit left</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/frog_0_48_1/horizontal+0.2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit right</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/frog_0_48_1/horizontal-0.2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/frog_0_48_1/zoomin-0.4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br>
+    </div>
+    <br><br><br>
+
+
+
+
+    <div class="section" id="tldr">
+      <div class="section-title">Method</div>
+      
+      <p style="width: 71%; text-align: left; font-size: 18px; margin: 0 auto;">
+        <span class="title-highlight">Reangle-A-Video</span> decomposes a dynamic 4D scene into <u><i>view-specific appearance (starting image)</i></u> and <u><i>view-invariant motion (image-to-video)</i></u>, 
+        addressing each component separately.
+        We first embed the scene's view-invariant motion into a pre-trained video diffusion model using our novel self-supervised training with data augmentation strategy. 
+        Initially, to capture diverse perspectives from a single monocular video, we repeatedly perform point-based warping to generate a set of warped videos.
+        These videos, together with the original video, form the training dataset for fine-tuning a pre-trained image-to-video diffusion model with a masked diffusion objective.
+        To achieve <b>(b) <u>dynamic camera control</u></b>, we sample videos using the fine-tuned model with the original first frame as input.
+        In contrast, for <b>(a) <u>static view transport</b></u>, we generate view-transported starting images 
+        by inpainting the warped first frames under an inference-time view consistency guidance using an off-the-shelf multi-view stereo reconstruction network.
+      </p>
+      <br>
+
+      
+      <div class="video-tiem">
+        <div class="vid-des" style="padding-bottom: 12px; font-size: 20px;"><i>Multi-view motion learning pipeline</i></div>
+        <img style="width: 70%; border-radius: 0; box-shadow: 0 0 0 0;" src="static/training-pipeline.png">
+      </div>
+      <br><br>
+      
+      <div class="video-tiem">
+        <div class="vid-des" style="padding-bottom: 12px; font-size: 20px;"><i>Multi-view image inpainting pipeline</i></div>
+        <img style="width: 50%; border-radius: 0; box-shadow: 0 0 0 0;" src="static/inpainting-method.png">
+      </div>
+      <br>
+
+    </div>
+    <br><br><br>
+
+
+
+
+
+    <div class="section" id="tldr">
+      <div class="section-title">Camera Visualizations</div>
+      
+      <p style="width: 70%; text-align: center; font-size: 18px; margin: 0 auto;">
+        We demonstrate six degrees of freedom in both <b>(a) <u>Static view transport</b></u> and <b>(b) <u>Dynamic camera control</u></b>. <br>
+        Here we visualize the transported viewpoints and camera movements used in our work.
+      </p>
+      <br>
+
+      <div class="video-tiem">
+        <img style="width: 55%; border-radius: 0; box-shadow: 0 0 0 0;" src="static/camera-vis.png">
+      </div>
+      <br>
+    </div>
+    <br><br><br>
+    
+    <div class="section" id="tldr">
+      <div class="section-title"><b>Results: (a) <u>Static view transport</u></b></div>
+      
+      <p style="width: 70%; text-align: center; font-size: 18px; margin: 0 auto;">
+      </p>
+
+      <!-- lion -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/lion_237_333_2/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit left</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/lion_237_333_2/horizontal+8_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit right</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/lion_237_333_2/horizontal-6_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <!-- Second row -->
+        <div class="video-item">
+          <div class="vid-des">&nbsp;</div>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/lion_237_333_2/vertical+4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Dolly zoom in</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/lion_237_333_2/zoomin-18_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- blackswan -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit left</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/horizontal+10_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit right</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/horizontal-10_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <!-- Second row -->
+        <div class="video-item">
+          <div class="vid-des">View from Orbit up</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/vertical-4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/vertical+4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Dolly zoom in</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/zoomin-18_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+
+      <!-- labrador -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/labrador_25_121_2/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit left</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/labrador_25_121_2/horizontal+6_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit right</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/labrador_25_121_2/horizontal-10_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <!-- Second row -->
+        <div class="video-item">
+          <div class="vid-des">&nbsp;</div>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit up</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/labrador_25_121_2/vertical-5_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Dolly zoom in</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/labrador_25_121_2/zoomin-20_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- bear -->
+      <!-- <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/bear_9_57_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit right</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/bear_9_57_1/horizontal-6_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Dolly zoom in</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/bear_9_57_1/zoomin-20_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <div class="video-item">
+          <div class="vid-des">&nbsp;</div>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/bear_9_57_1/vertical+4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit up</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/bear_9_57_1/vertical-3_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br> -->
+
+
+      <!-- elephant-grass -->
+      <div class="video-grid" style="width: 98%; margin: 0 auto; grid-template-columns: repeat(4, 1fr);">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/elephant-grass_107_203_2/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit left</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/elephant-grass_107_203_2/horizontal+10_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/elephant-grass_107_203_2/vertical+4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit up</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/elephant-grass_107_203_2/vertical-5_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+      
+      <!-- car-roundabout -->
+      <div class="video-grid" style="width: 98%; margin: 0 auto; grid-template-columns: repeat(4, 1fr);">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/car-roundabout_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit left</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/car-roundabout_0_48_1/horizontal+6_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/car-roundabout_0_48_1/vertical+3_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Dolly zoom in</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/car-roundabout_0_48_1/zoomin-16_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- car-turn -->
+      <div class="video-grid" style="width: 98%; margin: 0 auto; grid-template-columns: repeat(4, 1fr);">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/car-turn_20_68_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit right</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/car-turn_20_68_1/horizontal-6_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/car-turn_20_68_1/vertical+2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit up</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/car-turn_20_68_1/vertical-4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- rhino -->
+      <div class="video-grid" style="width: 98%; margin: 0 auto; grid-template-columns: repeat(4, 1fr);">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/rhino_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit left</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/rhino_0_48_1/horizontal-10_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/rhino_0_48_1/vertical+3_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Dolly zoom in</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-svt/rhino_0_48_1/zoomin-16_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      
+      <br>
+    </div>
+    <br><br><br>
+
+
+
+
+    <div class="section" id="tldr">
+      <div class="section-title"><b>Results: (b) <u>Dynamic camera control</u></b></div>
+      
+      <p style="width: 70%; text-align: center; font-size: 18px; margin: 0 auto;">
+      </p>
+
+
+      <!-- train -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/train_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit down</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/train_0_48_1/vertical+0.1_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit up</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/train_0_48_1/vertical-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <!-- Second row -->
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit left</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/train_0_48_1/horizontal+0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/train_0_48_1/zoomin-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom out</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/train_0_48_1/zoomout+0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- lucia -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/lucia_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit left</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/lucia_0_48_1/horizontal+0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/lucia_0_48_1/zoomin-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <!-- Second row -->
+        <div class="video-item">
+          <div class="vid-des">&nbsp;</div>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit down</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/lucia_0_48_1/vertical+0.1_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit up</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/lucia_0_48_1/vertical-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+
+      <!-- bus -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/bus_26_74_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/bus_26_74_1/zoomin-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom out</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/bus_26_74_1/zoomout+0.1_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <!-- Second row -->
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit left</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/bus_26_74_1/horizontal+0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit right</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/bus_26_74_1/horizontal-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit down</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/bus_26_74_1/vertical+0.1_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+
+
+      <!-- stork -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/stork_10_58_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit right</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/stork_10_58_1/horizontal-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom out</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-dcc/stork_10_58_1/zoomout+0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- lama -->
+      <div class="video-grid" style="width: 98%; margin: 0 auto; grid-template-columns: repeat(4, 1fr);">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/lama_50_98_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit left</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/lama_50_98_1/horizontal+0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit up</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/lama_50_98_1/vertical-0.25_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/lama_50_98_1/zoomin-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- cat-girl -->
+      <div class="video-grid" style="width: 98%; margin: 0 auto; grid-template-columns: repeat(4, 1fr);">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/cat-girl_5_53/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit right</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/cat-girl_5_53/horizontal-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit up</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/cat-girl_5_53/vertical-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/cat-girl_5_53/zoomin-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- puppy (down) | monkey (zoom-in) -->
+      <div class="video-grid" style="width: 98%; margin: 0 auto; grid-template-columns: repeat(4, 1fr);">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/monkey_55_103_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/monkey_55_103_1/zoomin-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/puppy_102_150_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit down</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/puppy_102_150_1/vertical+0.1_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- bike-packing (down) | elephant (zoom-in) -->
+      <div class="video-grid" style="width: 98%; margin: 0 auto; grid-template-columns: repeat(4, 1fr);">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/bike-packing_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit down</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/bike-packing_0_48_1/vertical+0.1_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/elephant_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in</div>
+          <video muted autoplay loop style="width: 100%">
+            <source src="static/gallery-dcc/elephant_0_48_1/zoomin-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br>
+
+    </div>
+    <br><br><br>
+
+
+    <div class="section" id="tldr">
+      <div class="section-title">Comparisons (1/2)</div>
+      
+      <p style="width: 100%; text-align: center; font-size: 18px; margin: 0 auto;">
+        For <b>(a) <u>Static view transport</b></u>, we compare with Generative Camera Dolly, and Vanilla CogVideoX I2V which employs the same input frame as ours.
+      </p>
+      <br>
+
+
+      <!-- parrot ours -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video <br> &nbsp;</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/input.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit left <br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/horizontal+6.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down <br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/vertical+4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- parrot gcd -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/input.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Generative Camera Dolly</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/gcd/parrot_0_48_1/horziontal+6_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Generative Camera Dolly</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/gcd/parrot_0_48_1/vertical+4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- parrot cogvideox -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/teaser/parrot_0_48_1/input.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Vanilla CogVideoX I2V</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/cogvideox/parrot_0_48_1/horizontal+6_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Vanilla CogVideoX I2V</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/cogvideox/parrot_0_48_1/vertical+4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+
+      <!-- car-roundabout ours -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video <br> &nbsp;</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/car-roundabout_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit down <br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/car-roundabout_0_48_1/vertical+3_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Dolly zoom in <br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/car-roundabout_0_48_1/zoomin-16_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- car-roundabout gcd -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/car-roundabout_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Generative Camera Dolly</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/gcd/car-roundabout_0_48_1/vertical+3_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Generative Camera Dolly</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/gcd/car-roundabout_0_48_1/zoomin-16_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- car-roundabout cogvideox -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/car-roundabout_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Vanilla CogVideoX I2V</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/cogvideox/car-roundabout_0_48_1/vertical+3_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Vanilla CogVideoX I2V</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/cogvideox/car-roundabout_0_48_1/zoomin-16_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+
+      <!-- blackswan ours -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video <br> &nbsp;</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit up <br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/vertical-4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">View from Orbit right <br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/horizontal-10_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- blackswan gcd -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Generative Camera Dolly</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/gcd/blackswan_0_48_1/vertical-4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Generative Camera Dolly</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/gcd/blackswan_0_48_1/horizontal-10_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- blackswan cogvideox -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/gallery-svt/blackswan_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Vanilla CogVideoX I2V</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/cogvideox/blackswan_0_48_1/vertical-4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Vanilla CogVideoX I2V</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/svt/cogvideox/blackswan_0_48_1/horizontal-10_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br>
+
+      </div>
+      <br><br><br>
+
+
+    <div class="section" id="tldr">
+      <div class="section-title">Comparisons (2/2)</div>
+
+      <p style="width: 100%; text-align: center; font-size: 18px; margin: 0 auto;">
+        For <b>(b) <u>Dynamic camera control</b></u>, we compare with NVS-Solver and Trajectory Attention.
+      </p>
+      <br>
+
+
+      <!-- cat-girl ours -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video <br> &nbsp;</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/cat-girl_5_53/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit right <br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/cat-girl_5_53/horizontal-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit up <br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/cat-girl_5_53/vertical-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- cat-girl nvs -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/cat-girl_5_53/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>NVS-Solver</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/nvs-solver/cat-girl_5_53/horizontal-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>NVS-Solver</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/nvs-solver/cat-girl_5_53/vertical-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- cat-girl traj -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/cat-girl_5_53/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Trajectory Attention</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/traj-attn/cat-girl_5_53/horizontal-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Trajectory Attention</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/traj-attn/cat-girl_5_53/vertical-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- stork ours -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video <br> &nbsp;</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/stork_10_58_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit right <br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/stork_10_58_1/horizontal-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom out<br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/stork_10_58_1/zoomout+0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- stork nvs -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/stork_10_58_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>NVS-Solver</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/nvs-solver/stork_10_58_1/horizontal-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>NVS-Solver</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/nvs-solver/stork_10_58_1/zoomout+0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- stork traj -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/stork_10_58_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Trajectory Attention</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/traj-attn/stork_10_58_1/horizontal-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Trajectory Attention</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/traj-attn/stork_10_58_1/zoomout+0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <!-- lucia ours -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video <br> &nbsp;</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/lucia_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in<br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/lucia_0_48_1/zoomin-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Orbit up<br> <mark><span class="title-highlight">Reangle-A-Video</span> <b>(Ours)</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/lucia_0_48_1/vertical-0.2_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- lucia nvs -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/lucia_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>NVS-Solver</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/nvs-solver/lucia_0_48_1/zoomin-0.8_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>NVS-Solver</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/nvs-solver/lucia_0_48_1/vertical-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- lucia traj -->
+      <div class="video-grid" style="width: 90%; margin: 0 auto;">
+        <!-- First row -->
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/ours/lucia_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Trajectory Attention</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/traj-attn/lucia_0_48_1/zoomin-0.8_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des"><mark><b>Trajectory Attention</b></mark></div>
+          <video muted autoplay loop style="width: 80%">
+            <source src="static/comparison/dcc/traj-attn/lucia_0_48_1/vertical-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br>
+    </div>
+
+
+
+    <!-- <div class="section" id="tldr">
+      <div class="section-title">Limitations and Failure cases</div>
+      
+      <p style="width: 80%; text-align: center; font-size: 18px; margin: 0 auto;">
+        Reangle-A-Video relies on point-based warping using estimated depth maps, making it inherently vulnerable to errors from inaccurate depth estimation and incorrect camera intrinsics.
+        These inaccuracies can distort the warping process and introdce pixel-scale artifacts.
+      </p>
+      <br>
+
+      <div></div>
+      <div class="video-tiem">
+        <img style="width: 35%; border-radius: 0; box-shadow: 0 0 0 0;" src="static/appendix_limit_2.png">
+      </div>
+      <br><br>
+
+
+      <p style="width: 80%; text-align: center; font-size: 18px; margin: 0 auto;">
+        Reangle-A-Video may produce inaccurate reconstructions for videos with fast, complex motion.
+      </p>
+      <br>
+
+      <div class="video-grid" style="width: 80%; margin: 0 auto; grid-template-columns: repeat(2, 1fr);">
+        <div class="video-item">
+          <div class="vid-des">Input video</div>
+          <video muted autoplay loop style="width: 75%">
+            <source src="static/gallery-dcc/breakdance-flare_0_48_1/input_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <div class="vid-des">Camera movement: Dolly zoom in</div>
+          <video muted autoplay loop style="width: 75%">
+            <source src="static/gallery-dcc/breakdance-flare_0_48_1/zoomin-0.4_reencoded.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br><br><br>
+
+
+      <br>
+    </div> -->
+
+
+
+  </div> 
+  
+  <script>
+    // Global flag to track playing state for Enter key toggle
+    let videosPlaying = true;
+    
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        const videos = document.querySelectorAll("video");
+        if (videosPlaying) {
+          videos.forEach(video => video.pause());
+          videosPlaying = false;
+        } else {
+          videos.forEach(video => video.play());
+          videosPlaying = true;
+        }
+      }
+    });
+    
+    // Synchronize videos within each video-grid: reset and start them simultaneously
+    function synchronizeVideoGrids() {
+      const grids = document.querySelectorAll('.video-grid');
+      grids.forEach(grid => {
+        const videos = grid.querySelectorAll('video');
+        videos.forEach(video => {
+          video.pause();
+          video.currentTime = 0;
+        });
+        // Use a slight delay to ensure the reset takes effect before playing
+        setTimeout(() => {
+          videos.forEach(video => video.play());
+        }, 100);
+      });
+    }
+    
+    // Call synchronization function when the window loads
+    window.addEventListener("load", () => {
+      synchronizeVideoGrids();
+    });
+  </script>
+</body>
+</html>
