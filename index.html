@@ -6,356 +6,374 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.">
-    
-    <meta name="keywords" content="minimal light">
-    
-    
-    <link rel="canonical" href="https://minimal-light-theme.yliu.me/"/>
-    
+    <meta name="description" content="Hyeonho Jeong is a Research Engineer at Adobe Research, working on video generation and editing with diffusion models.">
+    <meta name="keywords" content="Hyeonho Jeong, video generation, video editing, diffusion models, Adobe Research, computer vision">
+    <link rel="canonical" href="https://hyeonho99.github.io/"/>
 
-    <!-- <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/favicon-dark.png" type="image/png" /> -->
-    <!-- <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" /> -->
-    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
+    <link rel="icon" href="data:,">
 
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin=anonymous>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
 
-    
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/publications.css">
-    
-
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        
-        
-        <a class="image avatar"><img src="./assets/img/malaga.jpg" alt="avatar" style="border-radius: 20%;"/></a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
+    <div class="container">
 
-        <h2>Hyeonho Jeong</h2>
-
-        
-        <position style="font-size:1.10rem;">Research Engineer @ Adobe</position>
-        <br>   
-        <!-- <position style="font-size:1.10rem;">Intern @ Adobe Research</position>
-        <br>      -->
-  
-        
-        <!-- <del><email>hyeonho.jeong (at) kaist.ac.kr</email></del><br> -->
-        <email>hyeonhoj (at) adobe (dot) com</email> <br>
-        <email>drake6751 (at) gmail (dot) com</email>
-        
-
-        <br>
-        <br>
-        <div class="social-icons">
-        
-        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=Pa7EfsEAAAAJ">
-          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
-        </a>  
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="./assets/files/resume.pdf">
-          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="https://github.com/hyeonho99">
-          <i class="fab fa-github"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/in/hyeonho-jeong-jhh/">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 0 0 0" href="https://twitter.com/Hyeonho_Jeong99">
-          <i class="fab fa-twitter"></i>
-        </a>
-        
+      <!-- ===== HEADER / PROFILE ===== -->
+      <header class="profile">
+        <div class="profile-photo">
+          <img src="./assets/img/malaga.jpg" alt="Hyeonho Jeong" />
         </div>
-        <br>
-
+        <div class="profile-info">
+          <h1>Hyeonho Jeong</h1>
+          <p class="position">AI Researcher @ <a href="https://research.adobe.com/" target="_blank">Adobe Research</a></p>
+          <p class="email">hyeonhoj (at) adobe (dot) com &nbsp;&middot;&nbsp; drake6751 (at) gmail (dot) com</p>
+          <div class="social-icons">
+            <a href="https://scholar.google.com/citations?user=Pa7EfsEAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+            <a href="./assets/files/resume.pdf" target="_blank" rel="noopener" aria-label="CV">
+              <i class="ai ai-cv"></i>
+            </a>
+            <a href="https://github.com/hyeonho99" target="_blank" rel="noopener" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/hyeonho-jeong-jhh/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/Hyeonho_Jeong99" target="_blank" rel="noopener" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
       </header>
-      <section>
 
-      <h2 id="about-me">About Me</h2>
-
-<p>
-  I am a Research Engineer at Adobe Research.
-  Prior to that, I received my M.S. degree at <a href="https://gsai.kaist.ac.kr/">KAIST AI</a> in Aug. 2025, advised by <a href="https://bispl.weebly.com/">Prof. Jong Chul Ye</a>. 
-  Previously, I obtained my B.S. degree in Computer Science at Sungkyunkwan University in Aug. 2023.
-</p>
-<p>
-  <!-- My research interests lies in <b>AIGC</b>, especially Video Generation/Editing.<br> -->
-   My research interests lies in improving controallability and efficiency for <u>video synthesis (both generation and editing)</u>. 
-   <!-- I am also broadly interested in generative modeling across various modalities (image, video, 3D, 4D) using diffusion models.<br> -->
-  Refer to my <a href="./assets/files/resume.pdf">CV</a> for details.
-</p>
-
-<p>
-  <b>Adobe Research Internship</b>: Looking for student interns for Adobe internship program. 
-  If you are interested, please do not hesitate to send me an email. And please also ensure that your supervisor is aware of your internship plans.
-</p>
-
-
-<h2 id="news">News</h2>
-
-<ul>
-  <li><strong>[Aug. 2025]</strong> &nbsp; After finishing my masters at <a href="https://gsai.kaist.ac.kr/">KAIST AI</a>, I joined <a href="https://research.adobe.com/">Adobe Research</a>.</li>
-  <li><strong>[Jul. 2025]</strong> &nbsp; <a href="https://paulchhuang.github.io/jog3rwebsite/" target="_blank">JOG3R</a> is accepted to <b>BMVC 2025</b>.</li>
-  <li><strong>[Jun. 2025]</strong> &nbsp; <a href="https://hyeonho99.github.io/reangle-a-video/" target="_blank">Reangle-A-Video</a> is accepted to <b>ICCV 2025</b>.</li>
-  <li><strong>[Feb. 2025]</strong> &nbsp; <a href="https://hyeonho99.github.io/track4gen/" target="_blank">Track4Gen</a> is accepted to <b>CVPR 2025</b>.</li>
-  <li><strong>[Dec. 2024]</strong> &nbsp; <a href="https://geonyeong-park.github.io/spectral-motion-alignment/" target="_blank">SMA</a> is accepted to <b>AAAI 2025</b>.</li>
-  <li><strong>[Nov. 2024]</strong> &nbsp; <a href="https://video-motion-customization.github.io/" target="_blank">VMC</a> was presented as an oral presentation at <b>KCCV 2024</b>, 
-    and won finalist award at <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2024-south-korea" target="_blank">Qualcomm Innovation Fellowship Award 2024</a>.</li>
-  <li><strong>[Jul. 2024]</strong> &nbsp; <a href="https://hyeonho99.github.io/dreammotion/" target="_blank">DreamMotion</a> is accepted to <b>ECCV 2024</b>.</li>
-  <li><strong>[Jul. 2024]</strong> &nbsp; I started a research internship with <a href="https://research.adobe.com/" target="_blank">Adobe</a>, 
-    <br> mentored by <a href="https://www.duygu-ceylan.com/" target="_blank">Duygu Ceylan,</a> <a href="https://paulchhuang.wixsite.com/chhuang" target="_blank">Chun-Hao Huang,</a>
-     and <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/" target="_blank">Niloy J. Mitra.</a></li>
-  <li><strong>[Feb. 2024]</strong> &nbsp; <a href="https://video-motion-customization.github.io/" target="_blank">VMC</a> is accepted to <b>CVPR 2024</b>.</li>
-  <li><strong>[Jan. 2024]</strong> &nbsp; <a href="https://ground-a-video.github.io/" target="_blank">Ground-A-Video</a> is accepted to <b>ICLR 2024</b>.</li>
-  <li><strong>[Aug. 2023]</strong> &nbsp; I started M.S. at <a href="https://gsai.kaist.ac.kr/" target="_blank">KAIST Gradudate School of AI</a>. (Advisor: Prof. Jong Chul Ye)</li>
-  <!-- <li>
-    <strong>[Jan. 2023]</strong> &nbsp; Joined <a href="https://bispl.weebly.com/">BISPL</a> as a research intern and wrote my first paper. <br>
-    - <a href="https://arxiv.org/abs/2302.03900" target="_blank">Zero-shot Generation of Coherent Storybook from Plain Text Story using Diffusion Models</a>
-  </li> -->
-</ul>
-
-<h2 id="publications" style="margin: 2px 0px -5px;">Publications</h2>
-
-<div class="publications">
-<ol class="bibliography">
-  <li>
-    <div class="pub-row">
-      <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-        <img src="./assets/img/reangle-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100; height=40%" />
-                <abbr class="badge">ICCV</abbr>
-      </div>
-      <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-          <div class="title">Reangle-A-Video: 4D Video Generation as Video-to-Video Translation</div>
-          <div class="author"> <strong><font color="black">Hyeonho Jeong*</font></strong>, Suhyeon Lee*, Jong Chul Ye
-          <div class="periodical"><em>International Conference on Computer Vision <strong>(ICCV)</strong>, 2025</em>
-          </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2503.09151" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-          <a href="https://hyeonho99.github.io/reangle-a-video/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-        </div>
-      </div>
-    </div>
-  </li>  
-  <br><hr>
-
-  <li>
-    <div class="pub-row">
-      <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-        <img src="./assets/img/JOG3R-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100; height=40%" />
-                <abbr class="badge">BMVC</abbr>
-      </div>
-      <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-          <div class="title">On Unifying Video Generation and Camera Pose Estimation</div>
-          <div class="author">Chun-Hao P. Huang, Niloy J. Mitra, <strong><font color="black">Hyeonho Jeong</font></strong>, Jae Shin Yoon, Duygu Ceylan
-          <div class="periodical"><em>The 36th British Machine Vision Conference <strong>(BMVC)</strong>, 2025</em>
-          </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2501.01409" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-          <a href="https://paulchhuang.github.io/jog3rwebsite/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-        </div>
-      </div>
-    </div>
-  </li>  
-  <br><hr>
-
-  <li>
-    <div class="pub-row">
-      <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-        <img src="./assets/img/Track4Gen-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100; height=40%" />
-                <abbr class="badge">CVPR</abbr>
-      </div>
-      <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-          <div class="title">Track4Gen: Teaching Video Diffusion Models to Track Points Improves Video Generation</div>
-          <div class="author"><strong><font color="black">Hyeonho Jeong</font></strong>, Chun-Hao P. Huang, Jong Chul Ye, Niloy J. Mitra, Duygu Ceylan
-          <div class="periodical"><em>IEEE / CVF Computer Vision and Pattern Recognition Conference <strong>(CVPR)</strong>, 2025</em>
-            </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2412.06016" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-          <a href="https://hyeonho99.github.io/track4gen/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-        </div>
-      </div>
-    </div>
-  </li>  
-  <br><hr>
-
-  <li>
-    <div class="pub-row">
-      <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-        <img src="./assets/img/sma-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100; height=40%" />
-                <abbr class="badge">AAAI</abbr>
-      </div>
-      <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-          <div class="title">Spectral Motion Alignment for Video Motion Transfer using Diffusion Models</div>
-          <div class="author">Geon Yeong Park*, <strong><font color="black">Hyeonho Jeong*</font></strong>, Sang Wan Lee, Jong Chul Ye
-          <div class="periodical"><em>
-            The 39th Annual AAAI Conference on Artificial Intelligence <br> <strong>(AAAI)</strong> 2025</em>
-          </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2403.15249" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-          <a href="https://geonyeong-park.github.io/spectral-motion-alignment/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-          <a href="https://github.com/geonyeong-park/Spectral-Motion-Alignment" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-        </div>
-      </div>
-    </div>
-  </li>  
-  <br><hr>
-
-  <li>
-    <div class="pub-row">
-      <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-        <img src="./assets/img/dreammotion-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-                <abbr class="badge">ECCV</abbr>
-      </div>
-      <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-          <div class="title">DreamMotion: Space-Time Self-Similar Score Distillation for Zero-Shot Video Editing</div>
-          <div class="author"><strong><font color="black">Hyeonho Jeong</font></strong>, Jinho Chang, Geon Yeong Park, Jong Chul Ye
-          <div class="periodical"><em>The 18th European Conference on Computer Vision <strong>(ECCV)</strong>, 2024</em>
-          </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2403.12002/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-          <a href="https://hyeonho99.github.io/dreammotion/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-        </div>
-      </div>
-    </div>
-  </li>
-  <br><hr>  
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-    <img src="./assets/img/vmc-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-            <abbr class="badge">CVPR</abbr>
-  </div>
-  <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-      <div class="title">VMC: Video Motion Customization using Temporal Attention Adaption for Text-to-Video Diffusion Models</div>
-      <div class="author"><strong><font color="black">Hyeonho Jeong*</font></strong>, Geon Yeong Park*, Jong Chul Ye
-      <div class="periodical"><em>IEEE / CVF Computer Vision and Pattern Recognition Conference <strong>(CVPR)</strong>, 2024</em>
-      </div>
-    <div class="links">
-      <a href="https://arxiv.org/abs/2312.00845" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-      <a href="https://video-motion-customization.github.io/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-      <a href="https://github.com/HyeonHo99/Video-Motion-Customization" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-      <a href="https://drive.google.com/drive/u/2/folders/1L4dIqeK52lGBuxIKAEUzZgOEP95dz7AC?usp=drive_link" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Data</a>      
-      
-    </div>
-  </div>
-</div>
-</li>
-<br><hr>
-
-
-<li>
-  <div class="pub-row">
-    <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-      <img src="./assets/img/gav-teaser.gif" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-              <abbr class="badge">ICLR</abbr>
-    </div>
-    <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-        <div class="title">Ground-A-Video: Zero-shot Grounded Video Editing using Text-to-image Diffusion Models</div>
-        <div class="author"><strong><font color="black">Hyeonho Jeong</font></strong>, Jong Chul Ye
-        <div class="periodical"><em>International Conference on Learning Representations <strong>(ICLR)</strong>, 2024</em>
-        </div>
-      <div class="links">
-        <a href="https://arxiv.org/abs/2310.01107/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-        <a href="https://ground-a-video.github.io/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Project</a>
-        <a href="https://github.com/Ground-A-Video/Ground-A-Video" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-              
-        
-      </div>
-    </div>
-  </div>
-</li>
-<br><hr>
-
-<li>
-  <div class="pub-row">
-    <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-      <img src="./assets/img/lamp-teaser.png" class="teaser img-fluid z-depth-1" />
-              <abbr class="badge">ICASSP</abbr>
-    </div>
-    <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-        <div class="title">Neural Network Training Strategy to Enhance Anomaly Detection Performance</div>
-        <div class="author">YeongHyeon Park, Sungho Kang, Myung Jin Kim, <strong><font color="black">Hyeonho Jeong</font></strong>, Hyunkyu Park, Hyeong Seok Kim, Juneho Yi
-        <div class="periodical"><em>International Conference on Acoustics, Speech, & Signal Processing <strong>(ICASSP)</strong>, 2024</em>
-        </div>
-      <div class="links">
-        <a href="https://arxiv.org/abs/2308.14595/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-      </div>
-    </div>
-  </div>
-</li>
-<br><hr>
-
-<li>
-  <div class="pub-row">
-    <div class="col-sm-3 abbr" style="position: relative;padding-right: 0px;padding-left: 0px;">
-      <img src="./assets/img/storybook-teaser.png" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-              <!-- <abbr class="badge">preprint</abbr> -->
-    </div>
-    <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px;">
-        <div class="title">Zero-shot Generation of Coherent Storybook from Plain Text Story using Diffusion Models</div>
-        <div class="author"><strong><font color="black">Hyeonho Jeong</font></strong>, Gihyun Kwon, Jong Chul Ye
-        <div class="periodical"><em>ArXiv 2023</em>
-        </div>
-      <div class="links">
-        <a href="https://arxiv.org/abs/2302.03900/" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">arXiv</a>
-      </div>
-    </div>
-  </div>
-</li>
-<br><hr>
-
-<!-- <br /> -->
-
-</ol>
-</div>
-
-<!-- <h2 id="services">Teaching</h2>
-
-<ul style="margin:0 0 5px;">
-  <li>Teaching Assistant, Spring 2024, 2025, <i>Generative Models and Unsupervised Learning</i> (AI 618), KAIST</li>
-</ul> -->
-
-
-<!-- <h2 id="services">Services</h2>
-
-<h4 style="margin:0 10px 0;">Conference Reviewers</h4>
-
-<ul style="margin:0 0 5px;">
-  <li><a href="http://cvpr2023.thecvf.com/"><autocolor>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2021-2023</autocolor></a></li>
-  <li><a href="http://iccv2021.thecvf.com/"><autocolor>IEEE/CVF International Conference on Computer Vision (ICCV) 2021</autocolor></a></li>
-  <li><a href="https://eccv2022.ecva.net/"><autocolor>European Conference on Computer Vision (ECCV) 2022</autocolor></a></li>
-</ul> -->
-
-      <br>
-
-      
-      <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</small></p>
-      
-
+      <!-- ===== ABOUT ===== -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I am a researcher at <a href="https://research.adobe.com/" target="_blank">Adobe</a> working on video generation and editing.
+          Currently, I am primarily focused on bringing long video generation and editing capabilities to <a href="https://www.adobe.com/products/firefly.html" target="_blank">Video Firefly</a>.
+          I have additionally worked on camera-controllable video generation for Firefly foundational models.
+          Previously at <a href="https://gsai.kaist.ac.kr/" target="_blank">KAIST AI</a>, I worked on improving the controllability and efficiency of video synthesis using diffusion models under the supervision of <a href="https://bispl.weebly.com/" target="_blank">Prof. Jong Chul Ye</a>.
+        </p>
+        <p class="callout">
+          <strong>Adobe Research Internship / University Collaboration:</strong> If you are interested in collaborating with me, don't hesitate to reach out via my work email.
+          <br>
+          <i>Adobe internships are usually discussed around November, December of the year preceding it.</i>
+        </p>
       </section>
+
+      <!-- ===== NEWS ===== -->
+      <section id="news">
+        <h2>News</h2>
+        <div class="news-list">
+          <ul>
+            <li><span class="news-date">[Feb. 2025]</span> <a href="https://zheninghuang.github.io/Space-Time-Pilot/" target="_blank">SpaceTimePilot</a> is accepted to <strong>CVPR 2026</strong>.</li>
+            <li><span class="news-date">[Aug. 2025]</span> After finishing my master's at <a href="https://gsai.kaist.ac.kr/" target="_blank">KAIST AI</a>, I joined <a href="https://research.adobe.com/" target="_blank">Adobe Research</a>.</li>
+            <li><span class="news-date">[Jul. 2025]</span> <a href="https://paulchhuang.github.io/jog3rwebsite/" target="_blank">JOG3R</a> is accepted to <strong>BMVC 2025</strong>.</li>
+            <li><span class="news-date">[Jun. 2025]</span> <a href="https://hyeonho99.github.io/reangle-a-video/" target="_blank">Reangle-A-Video</a> is accepted to <strong>ICCV 2025</strong>.</li>
+            <li><span class="news-date">[Feb. 2025]</span> <a href="https://hyeonho99.github.io/track4gen/" target="_blank">Track4Gen</a> is accepted to <strong>CVPR 2025</strong>.</li>
+            <li><span class="news-date">[Dec. 2024]</span> <a href="https://geonyeong-park.github.io/spectral-motion-alignment/" target="_blank">SMA</a> is accepted to <strong>AAAI 2025</strong>.</li>
+            <li><span class="news-date">[Nov. 2024]</span> <a href="https://video-motion-customization.github.io/" target="_blank">VMC</a> was presented as an oral at <strong>KCCV 2024</strong> and won a finalist award at the <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2024-south-korea" target="_blank">Qualcomm Innovation Fellowship 2024</a>.</li>
+            <li><span class="news-date">[Jul. 2024]</span> <a href="https://hyeonho99.github.io/dreammotion/" target="_blank">DreamMotion</a> is accepted to <strong>ECCV 2024</strong>.</li>
+            <li><span class="news-date">[Jul. 2024]</span> I started a research internship at <a href="https://research.adobe.com/" target="_blank">Adobe</a>, mentored by <a href="https://www.duygu-ceylan.com/" target="_blank">Duygu Ceylan</a>, <a href="https://paulchhuang.wixsite.com/chhuang" target="_blank">Chun-Hao Huang</a>, and <a href="http://www0.cs.ucl.ac.uk/staff/n.mitra/" target="_blank">Niloy J. Mitra</a>.</li>
+            <li><span class="news-date">[Feb. 2024]</span> <a href="https://video-motion-customization.github.io/" target="_blank">VMC</a> is accepted to <strong>CVPR 2024</strong>.</li>
+            <li><span class="news-date">[Jan. 2024]</span> <a href="https://ground-a-video.github.io/" target="_blank">Ground-A-Video</a> is accepted to <strong>ICLR 2024</strong>.</li>
+            <li><span class="news-date">[Aug. 2023]</span> I started my M.S. at <a href="https://gsai.kaist.ac.kr/" target="_blank">KAIST Graduate School of AI</a> (Advisor: Prof. Jong Chul Ye).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== PUBLICATIONS ===== -->
+      <section id="publications">
+        <h2>Publications</h2>
+
+        <div class="publications">
+          <ol class="bibliography">
+
+            <!-- Memory-V2V -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/memoryv2v-teaser.gif" alt="Memory-V2V" />
+                </div>
+                <div class="pub-info">
+                  <div class="title">Memory-V2V: Memory-Augmented Video-to-Video Diffusion for Consistent Multi-Turn Editing</div>
+                  <div class="author">Dohun Lee, Chun-Hao Paul Huang, Xuelin Chen, Jong Chul Ye, Duygu Ceylan, <strong>Hyeonho Jeong</strong></div>
+                  <div class="periodical"><em>arXiv, 2026</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2601.16296" class="btn" target="_blank">arXiv</a>
+                    <a href="https://dohunlee1.github.io/MemoryV2V/" class="btn" target="_blank">Project</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- TrajectoryMover -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/trajectorymover-teaser.gif" alt="TrajectoryMover" />
+                </div>
+                <div class="pub-info">
+                  <div class="title">TrajectoryMover: Generative Movement of Object Trajectories in Videos</div>
+                  <div class="author">Kiran Chhatre, <strong>Hyeonho Jeong</strong>, Yulia Gryaditskaya, Christopher E. Peters, Chun-Hao Paul Huang, Paul Guerrero</div>
+                  <div class="periodical"><em>arXiv, 2026</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2603.29092" class="btn" target="_blank">arXiv</a>
+                    <a href="https://chhatrekiran.github.io/trajectorymover/" class="btn" target="_blank">Project</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- SpaceTimePilot -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/spacetimepilot-teaser.gif" alt="SpaceTimePilot" />
+                  <abbr class="badge">CVPR</abbr>
+                </div>
+                <div class="pub-info">
+                  <div class="title">SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time</div>
+                  <div class="author">Zhening Huang, <strong>Hyeonho Jeong</strong>, Xuelin Chen, Yulia Gryaditskaya, Tuanfeng Y. Wang, Joan Lasenby, Chun-Hao Huang</div>
+                  <div class="periodical"><em>IEEE / CVF Computer Vision and Pattern Recognition Conference <strong>(CVPR)</strong>, 2026</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2512.25075" class="btn" target="_blank">arXiv</a>
+                    <a href="https://zheninghuang.github.io/Space-Time-Pilot/" class="btn" target="_blank">Project</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Reangle-A-Video -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/reangle-teaser.gif" alt="Reangle-A-Video" />
+                  <abbr class="badge">ICCV</abbr>
+                </div>
+                <div class="pub-info">
+                  <div class="title">Reangle-A-Video: 4D Video Generation as Video-to-Video Translation</div>
+                  <div class="author"><strong>Hyeonho Jeong*</strong>, Suhyeon Lee*, Jong Chul Ye</div>
+                  <div class="periodical"><em>International Conference on Computer Vision <strong>(ICCV)</strong>, 2025</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2503.09151" class="btn" target="_blank">arXiv</a>
+                    <a href="https://hyeonho99.github.io/reangle-a-video/" class="btn" target="_blank">Project</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- JOG3R -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/JOG3R-teaser.gif" alt="JOG3R" />
+                  <abbr class="badge">BMVC</abbr>
+                </div>
+                <div class="pub-info">
+                  <div class="title">On Unifying Video Generation and Camera Pose Estimation</div>
+                  <div class="author">Chun-Hao P. Huang, Niloy J. Mitra, <strong>Hyeonho Jeong</strong>, Jae Shin Yoon, Duygu Ceylan</div>
+                  <div class="periodical"><em>The 36th British Machine Vision Conference <strong>(BMVC)</strong>, 2025</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2501.01409" class="btn" target="_blank">arXiv</a>
+                    <a href="https://paulchhuang.github.io/jog3rwebsite/" class="btn" target="_blank">Project</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Track4Gen -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/Track4Gen-teaser.gif" alt="Track4Gen" />
+                  <abbr class="badge">CVPR</abbr>
+                </div>
+                <div class="pub-info">
+                  <div class="title">Track4Gen: Teaching Video Diffusion Models to Track Points Improves Video Generation</div>
+                  <div class="author"><strong>Hyeonho Jeong</strong>, Chun-Hao P. Huang, Jong Chul Ye, Niloy J. Mitra, Duygu Ceylan</div>
+                  <div class="periodical"><em>IEEE / CVF Computer Vision and Pattern Recognition Conference <strong>(CVPR)</strong>, 2025</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2412.06016" class="btn" target="_blank">arXiv</a>
+                    <a href="https://hyeonho99.github.io/track4gen/" class="btn" target="_blank">Project</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- SMA -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/sma-teaser.gif" alt="SMA" />
+                  <abbr class="badge">AAAI</abbr>
+                </div>
+                <div class="pub-info">
+                  <div class="title">Spectral Motion Alignment for Video Motion Transfer using Diffusion Models</div>
+                  <div class="author">Geon Yeong Park*, <strong>Hyeonho Jeong*</strong>, Sang Wan Lee, Jong Chul Ye</div>
+                  <div class="periodical"><em>The 39th Annual AAAI Conference on Artificial Intelligence <strong>(AAAI)</strong>, 2025</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2403.15249" class="btn" target="_blank">arXiv</a>
+                    <a href="https://geonyeong-park.github.io/spectral-motion-alignment/" class="btn" target="_blank">Project</a>
+                    <a href="https://github.com/geonyeong-park/Spectral-Motion-Alignment" class="btn" target="_blank">Code</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- DreamMotion -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/dreammotion-teaser.gif" alt="DreamMotion" />
+                  <abbr class="badge">ECCV</abbr>
+                </div>
+                <div class="pub-info">
+                  <div class="title">DreamMotion: Space-Time Self-Similar Score Distillation for Zero-Shot Video Editing</div>
+                  <div class="author"><strong>Hyeonho Jeong</strong>, Jinho Chang, Geon Yeong Park, Jong Chul Ye</div>
+                  <div class="periodical"><em>The 18th European Conference on Computer Vision <strong>(ECCV)</strong>, 2024</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2403.12002/" class="btn" target="_blank">arXiv</a>
+                    <a href="https://hyeonho99.github.io/dreammotion/" class="btn" target="_blank">Project</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- VMC -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/vmc-teaser.gif" alt="VMC" />
+                  <abbr class="badge">CVPR</abbr>
+                </div>
+                <div class="pub-info">
+                  <div class="title">VMC: Video Motion Customization using Temporal Attention Adaption for Text-to-Video Diffusion Models</div>
+                  <div class="author"><strong>Hyeonho Jeong*</strong>, Geon Yeong Park*, Jong Chul Ye</div>
+                  <div class="periodical"><em>IEEE / CVF Computer Vision and Pattern Recognition Conference <strong>(CVPR)</strong>, 2024</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2312.00845" class="btn" target="_blank">arXiv</a>
+                    <a href="https://video-motion-customization.github.io/" class="btn" target="_blank">Project</a>
+                    <a href="https://github.com/HyeonHo99/Video-Motion-Customization" class="btn" target="_blank">Code</a>
+                    <a href="https://drive.google.com/drive/u/2/folders/1L4dIqeK52lGBuxIKAEUzZgOEP95dz7AC?usp=drive_link" class="btn" target="_blank">Data</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Ground-A-Video -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img">
+                  <img src="./assets/img/gav-teaser.gif" alt="Ground-A-Video" />
+                  <abbr class="badge">ICLR</abbr>
+                </div>
+                <div class="pub-info">
+                  <div class="title">Ground-A-Video: Zero-shot Grounded Video Editing using Text-to-image Diffusion Models</div>
+                  <div class="author"><strong>Hyeonho Jeong</strong>, Jong Chul Ye</div>
+                  <div class="periodical"><em>International Conference on Learning Representations <strong>(ICLR)</strong>, 2024</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2310.01107/" class="btn" target="_blank">arXiv</a>
+                    <a href="https://ground-a-video.github.io/" class="btn" target="_blank">Project</a>
+                    <a href="https://github.com/Ground-A-Video/Ground-A-Video" class="btn" target="_blank">Code</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- ICASSP -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-img no-zoom">
+                  <img src="./assets/img/lamp-teaser.png" alt="LAMP" />
+                  <abbr class="badge">ICASSP</abbr>
+                </div>
+                <div class="pub-info">
+                  <div class="title">Neural Network Training Strategy to Enhance Anomaly Detection Performance</div>
+                  <div class="author">YeongHyeon Park, Sungho Kang, Myung Jin Kim, <strong>Hyeonho Jeong</strong>, Hyunkyu Park, Hyeong Seok Kim, Juneho Yi</div>
+                  <div class="periodical"><em>International Conference on Acoustics, Speech, &amp; Signal Processing <strong>(ICASSP)</strong>, 2024</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2308.14595/" class="btn" target="_blank">arXiv</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Storybook -->
+            <!-- <li>
+              <div class="pub-row">
+                <div class="pub-img no-zoom">
+                  <img src="./assets/img/storybook-teaser.png" alt="Storybook" />
+                </div>
+                <div class="pub-info">
+                  <div class="title">Zero-shot Generation of Coherent Storybook from Plain Text Story using Diffusion Models</div>
+                  <div class="author"><strong>Hyeonho Jeong</strong>, Gihyun Kwon, Jong Chul Ye</div>
+                  <div class="periodical"><em>arXiv, 2023</em></div>
+                  <div class="links">
+                    <a href="https://arxiv.org/abs/2302.03900/" class="btn" target="_blank">arXiv</a>
+                  </div>
+                </div>
+              </div>
+            </li> -->
+
+          </ol>
+        </div>
+      </section>
+
+
+      <!-- ===== Past Interns ===== -->
+      <section id="mentoring">
+        <h2>Past Interns</h2>
+        <p style="font-size: 0.95rem; margin-bottom: 0.75rem;">I was lucky enough to have worked with the wonderful talents:</p>
+        <ul class="intern-list">
+          <li><a href="https://dohunlee1.github.io/" target="_blank">Dohun Lee</a> (KAIST)</li>
+          <li><a href="https://www.jentevandersanden.com/" target="_blank">Jente Vandersanden</a> (MPI)</li>
+          <li><a href="https://zheninghuang.github.io/" target="_blank">Zhening Huang</a> (University of Cambridge)</li>
+          <li><a href="https://chhatrekiran.github.io/" target="_blank">Kiran Chhatre</a> (KTH)</li>
+        </ul>
+      </section>
+
+
+      <!-- ===== FOOTER ===== -->
       <footer>
-        
+        <p>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</p>
       </footer>
+
     </div>
+
     <script src="/assets/js/scale.fix.js"></script>
-    
+    <script>
+      (function() {
+        var btn = document.getElementById('theme-toggle');
+        var icon = btn.querySelector('i');
+        var stored = localStorage.getItem('theme');
+        if (stored) {
+          document.documentElement.setAttribute('data-theme', stored);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        function updateIcon() {
+          var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+          icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        updateIcon();
+        btn.addEventListener('click', function() {
+          var current = document.documentElement.getAttribute('data-theme');
+          var next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          updateIcon();
+        });
+      })();
+    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -364,6 +382,5 @@
       ga('create', 'UA-111540567-4', 'auto');
       ga('send', 'pageview');
     </script>
-    
   </body>
 </html>
