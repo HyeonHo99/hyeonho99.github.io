@@ -35,44 +35,61 @@
   position: relative;
   flex-shrink: 0;
   width: 220px;
+  height: 140px;
+  overflow: visible;
 }
 
 .pub-img img {
   width: 100%;
-  height: 140px;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--color-border);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.no-zoom img {
-  cursor: default !important;
+.pub-img:not(.no-zoom) {
+  cursor: zoom-in;
 }
 
-.no-zoom img:hover {
-  transform: none !important;
-  height: 140px !important;
-  object-fit: cover !important;
-  box-shadow: none !important;
+/* Invisible hover-extension matching the enlarged image area (scale 2.2,
+   transform-origin: left center) so moving the cursor onto the zoomed
+   preview keeps the hover active and avoids flicker. */
+.pub-img:not(.no-zoom)::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: 0;
+  width: 220%;
+  height: 220%;
+  z-index: 5;
+  pointer-events: none;
 }
 
-.pub-img:not(.no-zoom) img:hover {
-  height: auto;
-  object-fit: contain;
+.pub-img:not(.no-zoom):hover::after {
+  pointer-events: auto;
+}
+
+.pub-img:not(.no-zoom):hover img {
   transform: scale(2.2);
   transform-origin: left center;
-  z-index: 50;
-  position: relative;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
+  z-index: 50;
+}
+
+.pub-img:not(.no-zoom):hover .badge {
+  opacity: 0;
 }
 
 .pub-img .badge {
   position: absolute;
   top: 8px;
   left: 8px;
+  z-index: 60;
   display: inline-block;
   padding: 0.2em 0.65em;
   font-size: 0.72rem;
@@ -84,6 +101,7 @@
   border-radius: 4px;
   line-height: 1.4;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.2s ease;
 }
 
 /* ===== PUBLICATION INFO ===== */
@@ -185,10 +203,30 @@
     width: 100%;
   }
 
+  .pub-img {
+    height: auto;
+  }
+
   .pub-img img {
     width: 100%;
     height: auto;
     max-height: 200px;
+    pointer-events: auto;
+  }
+
+  /* Disable hover zoom on mobile */
+  .pub-img:not(.no-zoom) {
+    cursor: default;
+  }
+
+  .pub-img:not(.no-zoom)::after {
+    display: none;
+  }
+
+  .pub-img:not(.no-zoom):hover img {
+    transform: none;
+    box-shadow: none;
+    z-index: 1;
   }
 
   .pub-info .title {
