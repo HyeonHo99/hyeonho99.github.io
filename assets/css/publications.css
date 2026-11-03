@@ -55,6 +55,11 @@
   cursor: zoom-in;
 }
 
+/* Show the whole image (no side cropping) for wide teasers */
+.pub-img img.fit-contain {
+  object-fit: contain;
+}
+
 /* Invisible hover-extension matching the enlarged image area (scale 2.2,
    transform-origin: left center) so moving the cursor onto the zoomed
    preview keeps the hover active and avoids flicker. */
@@ -128,6 +133,12 @@
 .pub-info .author strong {
   color: var(--color-heading);
   font-weight: 600;
+}
+
+.pub-info .author-note {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.25rem;
 }
 
 .pub-info .periodical {
